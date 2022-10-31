@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :alumnis
   resources :users
   root 'welcome#index'
+
+  get 'admin', to: 'admin#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
