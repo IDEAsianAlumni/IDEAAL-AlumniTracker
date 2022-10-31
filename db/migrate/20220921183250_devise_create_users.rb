@@ -8,6 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :last_name
       t.string :uid
       t.string :provider
+      t.integer :grad_year
       t.string :Major,              null: false, default: ""
       t.string :phone_number,              null: false, default: ""
       t.string :resume_link,               null: false, default: ""

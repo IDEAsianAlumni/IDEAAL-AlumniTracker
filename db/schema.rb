@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2022_10_31_015703) do
     t.string "last_name"
     t.string "uid"
     t.string "provider"
+    t.integer "grad_year"
     t.string "Major", default: "", null: false
     t.string "phone_number", default: "", null: false
     t.string "resume_link", default: "", null: false
