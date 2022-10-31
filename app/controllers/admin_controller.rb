@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
     def index
         @users = User.all
+        @mentor_to_mentees = MentorToMentee.all
     end
 
     def show
