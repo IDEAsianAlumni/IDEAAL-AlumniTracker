@@ -10,20 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_30_011936) do
+ActiveRecord::Schema.define(version: 2022_10_31_015703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "group", force: :cascade do |t|
     t.string "Group_Name"
-  end
-
-  create_table "mentor_to_mentees", force: :cascade do |t|
-    t.string "mentor_uid"
-    t.string "mentee_uid"
-    t.integer "status"
-    t.integer "year"
   end
 
   create_table "user_to_groups", force: :cascade do |t|
