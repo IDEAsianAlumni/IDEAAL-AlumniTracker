@@ -48,6 +48,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  gem 'simplecov', :require => false
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
@@ -69,3 +70,4 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "tree_support", "~> 0.1.9"
 gem "ruby-graphviz", "~> 1.2"
 gem "react-rails"
+gem "rails-controller-testing", "~> 1.0"
