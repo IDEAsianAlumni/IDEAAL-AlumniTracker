@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mentor uid:</strong>
+  <%= @mentor_to_mentee.mentor_uid %>
+</p>
+
+<p>
+  <strong>Mentee uid:</strong>
+  <%= @mentor_to_mentee.mentee_uid %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @mentor_to_mentee.status %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @mentor_to_mentee.year %>
+</p>
+
+<%= link_to 'Edit', edit_mentor_to_mentee_path(@mentor_to_mentee) %> |
+<%= link_to 'Back', admin_path %>

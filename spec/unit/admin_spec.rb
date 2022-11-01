@@ -13,3 +13,15 @@ describe AdminController do
         end
     end
 end
+
+describe AdminController do
+    describe "GET /admin", type: :controller do
+        describe "admin/mentor_to_mentees/new" do
+            it "renders new mapping template" do
+                get 'index'
+                expect(response.status).to be(200)
+            end
+        end
+    end
+end
+
