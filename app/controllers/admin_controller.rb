@@ -2,7 +2,15 @@ class AdminController < ApplicationController
     def index
         @users = User.all
         @mentor_to_mentees = MentorToMentee.all
+        @mtor 
+        @mtee 
     end
+
+    def display_user(val)
+        @mtor = @users.find(val)
+        return( @mtor.first_name + ' ' + @mtor.last_name )
+    end
+    helper_method :display_user
 
     def show
         
