@@ -7,7 +7,6 @@
     <tr>
       <th>First name</th>
       <th>Last name</th>
-      <th>UID</th>
       <th>Major</th>
       <th>Resume</th>
       <th>Phone Number</th>
@@ -22,7 +21,6 @@
       <tr>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
-        <td><%= user.uid %></td>
         <td><%= user.Major %></td>
         <td><%= user.resume_link %></td>
         <td><%= user.phone_number %></td>
@@ -38,8 +36,8 @@
 <table>
   <thead>
     <tr>
-      <th>Mentor uid</th>
-      <th>Mentee uid</th>
+      <th>Mentor</th>
+      <th>Mentee</th>
       <th>Status</th>
       <th>Year</th>
       <th colspan="3"></th>
@@ -49,8 +47,8 @@
   <tbody>
     <% @mentor_to_mentees.each do |mentor_to_mentee| %>
       <tr>
-        <td><%= mentor_to_mentee.mentor_uid %></td>
-        <td><%= mentor_to_mentee.mentee_uid %></td>
+        <td><%= display_user(mentor_to_mentee.mentor_uid) %></td>
+        <td><%= display_user(mentor_to_mentee.mentee_uid) %></td>
         <td><%= mentor_to_mentee.status %></td>
         <td><%= mentor_to_mentee.year %></td>
         <td><%= link_to 'Edit', edit_mentor_to_mentee_path(mentor_to_mentee) %></td>

@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_31_061852) do
+ActiveRecord::Schema.define(version: 2022_11_07_190516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "group", force: :cascade do |t|
     t.string "Group_Name"
+  end
+
+  create_table "group_to_users", force: :cascade do |t|
+    t.string "MentorID"
+    t.string "GroupID"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "year", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "mentor_to_mentees", force: :cascade do |t|
@@ -26,12 +39,6 @@ ActiveRecord::Schema.define(version: 2022_10_31_061852) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_to_groups", force: :cascade do |t|
-    t.string "mentor_uid"
-    t.string "group_id"
-    t.integer "year"
   end
 
   create_table "users", force: :cascade do |t|
