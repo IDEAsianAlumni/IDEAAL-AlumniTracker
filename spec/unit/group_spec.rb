@@ -9,15 +9,15 @@ RSpec.describe 'Make a Group', type: :model do
         expect(subject).to be_valid
     end
 
-    # it 'is not valid without a year' do
-    #     subject.year = nil
-    #     expect(subject).not_to be_valid
-    # end
+    it 'is not valid without a year' do
+        subject.year = nil
+        expect(subject).not_to be_valid
+    end
 
-    # it 'is not valid without a group name' do
-    #     subject.group_name = nil
-    #     expect(subject).not_to be_valid
-    # end
+    it 'is not valid without a group name' do
+        subject.group_name = nil
+        expect(subject).not_to be_valid
+    end
 end
 
 describe GroupsController do
