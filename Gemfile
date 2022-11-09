@@ -71,3 +71,5 @@ gem "tree_support", "~> 0.1.9"
 gem "ruby-graphviz", "~> 1.2"
 gem "react-rails"
 gem "rails-controller-testing", "~> 1.0"
+gem 'bootstrap', '~> 5.2.2'
+gem 'jquery-rails'
