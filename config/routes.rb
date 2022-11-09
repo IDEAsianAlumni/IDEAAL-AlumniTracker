@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :group_to_users
-  resources :groups
   get 'directory', to: 'directory#index'
   resources :mentor_to_mentees
   devise_for :users, controllers: {

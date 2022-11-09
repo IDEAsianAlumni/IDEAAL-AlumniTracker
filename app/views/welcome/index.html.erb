@@ -1,84 +1,12 @@
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Welcome</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
+<h1>LANDING PAGE FOR IDEASIAN_ALUMNI APP</h1>
+<% if current_user %>
+<h2><%= current_user.email %></h2>
+<%= link_to "Edit Account", edit_user_registration_path %>
+<%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %>
+<% else %>
+<%= link_to "Login", new_user_session_path %>
+<%= link_to "Create Account", new_user_registration_path %>
+<% end %>
 
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-		<a class="navbar-brand" href="#">
-      <%# <img src="app/assets/images/IDEAAL_Logo_Wordmark_Color-600x210.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> %>
-			<%= image_tag("IDEAAL_Logo_Wordmark_Color-600x210.jpg") %>
-      
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="container">
-			<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-				<a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-					<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-				</a>
-
-				<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-					<li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-					<li><a href="/admin" class="nav-link px-2 link-dark">Admin</a></li>
-					<li><a href="/directory" class="nav-link px-2 link-dark">Directory</a></li>
-					<li><a href="#" class="nav-link px-2 link-dark">Help</a></li>
-					<li><a href="#" class="nav-link px-2 link-dark">About</a></li>
-				</ul>
-				<% if current_user %>
-					<div class="col-md-3 text-end">
-						<%= current_user.email %>
-						<button type="button" class="btn btn-outline-primary me-2"><%= link_to "Edit Account", edit_user_registration_path %></button>
-						<button type="button" class="btn btn-primary"><%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %></button>
-					</div>
-				<% else %>
-					<div class="col-md-3 text-end">
-						<button type="button" class="btn btn-outline-primary me-2"><%= link_to "Login", new_user_session_path %></button>
-						<button type="button" class="btn btn-primary"><%= link_to "Create Account", new_user_registration_path %></button>
-					</div>
-				<% end %>
-				
-			</header>
-		</div>
-    
-  </div>
-</nav>
-<%# <% @groups.each do |group| %> 
-<div class="d-inline-flex p-2">
-	<div class="tree">
-		<div class="director">
-			<ul class="list-group">
-				<li class="list-group-item">Director1 Name</li>
-				<li class="list-group-item">Director2 Name</li>
-				<li class="list-group-item">Director3 Name</li>
-				<li class="list-group-item">Director4 Name</li>
-				<li class="list-group-item">Director5 Name</li>
-			</ul>
-		</div>
-		<div class="group">
-			<ul class="list-group">
-				<li class="list-group-item">An Group1</li>
-				<li class="list-group-item">A second item</li>
-				<li class="list-group-item">A third item</li>
-				<li class="list-group-item">A fourth item</li>
-				<li class="list-group-item">And a fifth one</li>
-			</ul>
-		</div>
-		<div class="group">
-			<ul class="list-group">
-				<li class="list-group-item">An Group2</li>
-				<li class="list-group-item">A second item</li>
-				<li class="list-group-item">A third item</li>
-				<li class="list-group-item">A fourth item</li>
-				<li class="list-group-item">And a fifth one</li>
-			</ul>
-		</div>
-	</div>
-</div>
-
-<%# <% end %> 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<%= link_to "Admin Page", admin_path %>
+<%= link_to "Directory Page", directory_path %>
