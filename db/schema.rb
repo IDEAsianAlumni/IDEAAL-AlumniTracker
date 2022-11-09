@@ -15,19 +15,16 @@ ActiveRecord::Schema.define(version: 2022_11_07_190516) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "group", force: :cascade do |t|
-    t.string "Group_Name"
-  end
-
   create_table "group_to_users", force: :cascade do |t|
-    t.string "MentorID"
-    t.string "GroupID"
+    t.string "uid"
+    t.string "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string "year", null: false
+    t.string "year"
+    t.string "group_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
