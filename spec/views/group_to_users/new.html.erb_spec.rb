@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "group_to_users/new", type: :view do
   before(:each) do
     assign(:group_to_user, GroupToUser.new(
-      MentorID: "MyString",
-      GroupID: "MyString"
+      uid: "MyString",
+      group_id: "MyString"
     ))
   end
 
@@ -13,9 +13,9 @@ RSpec.describe "group_to_users/new", type: :view do
 
     assert_select "form[action=?][method=?]", group_to_users_path, "post" do
 
-      assert_select "input[name=?]", "group_to_user[MentorID]"
+      assert_select "input[name=?]", "group_to_user[uid]"
 
-      assert_select "input[name=?]", "group_to_user[GroupID]"
+      assert_select "input[name=?]", "group_to_user[group_id]"
     end
   end
 end

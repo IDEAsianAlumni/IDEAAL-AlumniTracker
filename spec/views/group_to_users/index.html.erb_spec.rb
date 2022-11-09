@@ -4,12 +4,12 @@ RSpec.describe "group_to_users/index", type: :view do
   before(:each) do
     assign(:group_to_users, [
       GroupToUser.create!(
-        MentorID: "Mentor",
-        GroupID: "Group"
+        uid: "Mentor",
+        group_id: "Group"
       ),
       GroupToUser.create!(
-        MentorID: "Mentor",
-        GroupID: "Group"
+        uid: "Mentor",
+        group_id: "Group"
       )
     ])
   end

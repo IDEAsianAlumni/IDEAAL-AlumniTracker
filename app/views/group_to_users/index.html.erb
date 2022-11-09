@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Mentorid</th>
-      <th>Groupid</th>
+      <th>uid</th>
+      <th>Group id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +14,8 @@
   <tbody>
     <% @group_to_users.each do |group_to_user| %>
       <tr>
-        <td><%= group_to_user.MentorID %></td>
-        <td><%= group_to_user.GroupID %></td>
+        <td><%= group_to_user.uid %></td>
+        <td><%= group_to_user.group_id %></td>
         <td><%= link_to 'Show', group_to_user %></td>
         <td><%= link_to 'Edit', edit_group_to_user_path(group_to_user) %></td>
         <td><%= link_to 'Destroy', group_to_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

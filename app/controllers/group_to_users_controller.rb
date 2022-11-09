@@ -65,6 +65,6 @@ class GroupToUsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_to_user_params
-      params.require(:group_to_user).permit(:MentorID, :GroupID)
+      params.require(:group_to_user).permit(:uid, :group_id)
     end
 end

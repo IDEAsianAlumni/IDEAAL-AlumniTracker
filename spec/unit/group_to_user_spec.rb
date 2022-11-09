@@ -2,19 +2,19 @@ require 'rails_helper'
 
 RSpec.describe 'Make a GroupToUser', type: :model do 
     subject do
-        GroupToUser.new(MentorID: '1', GroupID: '1')
+        GroupToUser.new(uid: '1', group_id: '1')
     end
 
     it 'is valid with valid attributes' do
         expect(subject).to be_valid
     end
 
-    it 'is not valid without a MentorID' do
-        subject.MentorID = nil
+    it 'is not valid without a uid' do
+        subject.uid = nil
         expect(subject).not_to be_valid
     end
     it 'is not valid without a GroupID' do
-        subject.GroupID = nil
+        subject.group_id = nil
         expect(subject).not_to be_valid
     end
 end

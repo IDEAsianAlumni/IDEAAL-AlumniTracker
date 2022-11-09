@@ -5,7 +5,7 @@ RSpec.describe GroupsController, type: :controller do
 
     describe "GET index" do
         it "assigns @groups" do
-        group = Group.create(year: "2021")
+        group = Group.create(year: "2021", group_name: "aaaa")
         get :index
         expect(assigns(:groups)).to eq([group])
         end

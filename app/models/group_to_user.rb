@@ -1,4 +1,4 @@
 class GroupToUser < ApplicationRecord
-    validates :MentorID, presence: true
-    validates :GroupID, presence: true
+    validates :uid, presence: true
+    validates :group_id, presence: true
 end
