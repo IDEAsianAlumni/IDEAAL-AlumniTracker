@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>LANDING PAGE FOR IDEASIAN_ALUMNI APP</h1>
 <% if current_user %>
 <h2><%= current_user.email %></h2>
@@ -10,3 +11,108 @@
 
 <%= link_to "Admin Page", admin_path %>
 <%= link_to "Directory Page", directory_path %>
+=======
+
+<div class="tree">
+	<div class="director">
+		<ul class="list-group">
+			<li class="list-group-item">Director1 Name</li>
+			<li class="list-group-item">Director2 Name</li>
+			<li class="list-group-item">Director3 Name</li>
+			<li class="list-group-item">Director4 Name</li>
+			<li class="list-group-item">Director5 Name</li>
+		</ul>
+	</div>
+	<div class="group">
+		<div class="group_l">
+				<ul class="list-group">
+					<li class="list-group-item">An Group1</li>
+					<li class="list-group-item">A second item</li>
+					<li class="list-group-item">A third item</li>
+					<li class="list-group-item">A fourth item</li>
+					<li class="list-group-item">And a fifth one</li>
+				</ul>
+			<ul class="list-group">
+				<li class="list-group-item">An Group1</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+		</div>
+		<div class="group_r">
+			<ul class="list-group">
+				<li class="list-group-item">An Group2</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item">An Group3</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item">An Group1</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item">An Group1</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<style>
+.tree {
+	justify-content: center;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+.group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 25px 40px;
+	justify-content: center;
+}
+.group_l {
+	display: flex;
+	flex-direction: column;
+
+}
+.group_r {
+	display: flex;
+	flex-direction: column;
+	
+}
+.list-group {
+	border: 1px solid black;
+	margin: 5px;
+}
+.director {
+	display: flex;
+	justify-content: center;
+	margin: 40px;
+}
+</style>
+
+<%# <% assignments = Hash.new() %>
+	<%# <% @mentor_assignments.each do |m_ass| %> 
+			<%# <% if assignments.has_key?(m_ass.Mentor_id) then %> 
+					<%# <% assignments[m_ass.Mentor_id].push(m_ass.Mentee_id) %> 
+			<%# <% else %> 
+					<%# <% assignments[m_ass.Mentor_id] = Array.new(1, m_ass.Mentee_id) %> 
+			<%# <% end %> 
+	<%# <% end %>  
+>>>>>>> g2user_navbar
