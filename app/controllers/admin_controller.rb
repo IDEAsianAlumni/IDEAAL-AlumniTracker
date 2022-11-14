@@ -7,8 +7,12 @@ class AdminController < ApplicationController
     end
 
     def display_user(val)
-        @mtor = @users.find(val)
-        return( @mtor.first_name + ' ' + @mtor.last_name )
+        begin
+            @mtor = @users.find(val)
+            return( @mtor.first_name + ' ' + @mtor.last_name )
+        rescue
+            return ('MISSING')
+        end
     end
     helper_method :display_user
 

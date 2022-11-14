@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   #https://stackoverflow.com/questions/16289299/rails-how-to-destroy-users-created-under-devise
-  #match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+  match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
 end
