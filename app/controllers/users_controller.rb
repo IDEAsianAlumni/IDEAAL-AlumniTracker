@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     # GET /Users or /Users.json
     def index
       @Users = User.all
+      @mentor_to_mentees = MentorToMentee.all
     end
   
     # GET /Users/1 or /Users/1.json
@@ -50,10 +51,12 @@ class UsersController < ApplicationController
     # DELETE /Users/1 or /Users/1.json
     def destroy
       @User.destroy
-  
       respond_to do |format|
-        format.html { redirect_to Users_url, notice: "User was successfully destroyed." }
-        format.json { head :no_content }
+        if (current_user.email == "admin@gmail.com")
+          format.html { redirect_to admin_path, notice: "deleted user" }
+        else 
+          format.html { redirect_to root_path, notice: "deleted user" }
+        end
       end
     end
   

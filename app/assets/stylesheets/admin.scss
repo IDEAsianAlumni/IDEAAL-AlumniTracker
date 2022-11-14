@@ -1,0 +1,28 @@
+#container {
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#left_column{
+    width: 50%;
+}
+
+#right_column{
+    width: 50%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(244, 244, 244);
+}
