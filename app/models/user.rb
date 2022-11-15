@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :users, through: :mentor_to_mentees
+  has_many :mentor_to_mentees
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

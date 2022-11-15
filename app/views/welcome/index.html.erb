@@ -1,98 +1,103 @@
-<h1>LANDING PAGE FOR IDEASIAN_ALUMNI APP</h1>
-<% if current_user %>
-<h2><%= current_user.email %></h2>
-<%= link_to "Edit Account", edit_user_registration_path %>
-<%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %>
-<% else %>
-<%= link_to "Login", new_user_session_path %>
-<%= link_to "Create Account", new_user_registration_path %>
-<% end %>
 
-<h3>
-<%= link_to 'Tree View', member_trees_path %>
-</h3>
+<div class="tree">
+	<div class="director">
+		<ul class="list-group">
+			<li class="list-group-item">Director1 Name</li>
+			<li class="list-group-item">Director2 Name</li>
+			<li class="list-group-item">Director3 Name</li>
+			<li class="list-group-item">Director4 Name</li>
+			<li class="list-group-item">Director5 Name</li>
+		</ul>
+	</div>
+	<div class="group">
+		<div class="group_l">
+				<ul class="list-group">
+					<li class="list-group-item">An Group1</li>
+					<li class="list-group-item">A second item</li>
+					<li class="list-group-item">A third item</li>
+					<li class="list-group-item">A fourth item</li>
+					<li class="list-group-item">And a fifth one</li>
+				</ul>
+			<ul class="list-group">
+				<li class="list-group-item">An Group1</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+		</div>
+		<div class="group_r">
+			<ul class="list-group">
+				<li class="list-group-item">An Group2</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item">An Group3</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item">An Group1</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item">An Group1</li>
+				<li class="list-group-item">A second item</li>
+				<li class="list-group-item">A third item</li>
+				<li class="list-group-item">A fourth item</li>
+				<li class="list-group-item">And a fifth one</li>
+			</ul>
+		</div>
+	</div>
+</div>
 
-<h1>Mentors</h1>
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Middle name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Phone number</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<style>
+.tree {
+	justify-content: center;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+.group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 25px 40px;
+	justify-content: center;
+}
+.group_l {
+	display: flex;
+	flex-direction: column;
 
-  <tbody>
-    <% @mentors.each do |mentor| %>
-      <tr>
-        <td><%= mentor.first_name %></td>
-        <td><%= mentor.middle_name %></td>
-        <td><%= mentor.last_name %></td>
-        <td><%= mentor.email %></td>
-        <td><%= mentor.phone_number %></td>
-        <td><%= link_to 'Show', mentor %></td>
-        <td><%= link_to 'Edit', edit_mentor_path(mentor) %></td>
-        <td><%= link_to 'Destroy', mentor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+}
+.group_r {
+	display: flex;
+	flex-direction: column;
+	
+}
+.list-group {
+	border: 1px solid black;
+	margin: 5px;
+}
+.director {
+	display: flex;
+	justify-content: center;
+	margin: 40px;
+}
+</style>
 
-<h1>Mentees</h1>
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Middle name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Phone number</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @mentees.each do |mentee| %>
-      <tr>
-        <td><%= mentee.first_name %></td>
-        <td><%= mentee.middle_name %></td>
-        <td><%= mentee.last_name %></td>
-        <td><%= mentee.email %></td>
-        <td><%= mentee.phone_number %></td>
-        <td><%= link_to 'Show', mentee %></td>
-        <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td>
-        <td><%= link_to 'Destroy', mentee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>Mentor <-> Mentee</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Mentor</th>
-      <th>Mentee</th>
-      <th>Class Year</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @mentor_assignments.each do |mentor_assignment| %>
-      <tr>
-        <td><%= Mentor.where(id: mentor_assignment.Mentor_id).last.first_name %>
-            <%= Mentor.where(id: mentor_assignment.Mentor_id).last.last_name %></td>
-        <td><%= Mentee.where(id: mentor_assignment.Mentee_id).last.first_name %>
-            <%= Mentee.where(id: mentor_assignment.Mentee_id).last.last_name %></td>
-        <td><%= MentorAssignment.where(id: mentor_assignment.Mentee_id).last.class_year %></td>
-        <td><%= link_to 'Show', mentor_assignment %></td>
-        <td><%= link_to 'Edit', edit_mentor_assignment_path(mentor_assignment) %></td>
-        <td><%= link_to 'Destroy', mentor_assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%# <% assignments = Hash.new() %>
+	<%# <% @mentor_assignments.each do |m_ass| %> 
+			<%# <% if assignments.has_key?(m_ass.Mentor_id) then %> 
+					<%# <% assignments[m_ass.Mentor_id].push(m_ass.Mentee_id) %> 
+			<%# <% else %> 
+					<%# <% assignments[m_ass.Mentor_id] = Array.new(1, m_ass.Mentee_id) %> 
+			<%# <% end %> 
+	<%# <% end %>  

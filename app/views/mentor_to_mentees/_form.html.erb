@@ -1,0 +1,37 @@
+<%= form_with(model: mentor_to_mentee) do |form| %>
+  <% if mentor_to_mentee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mentor_to_mentee.errors.count, "error") %> prohibited this mentor_to_mentee from being saved:</h2>
+
+      <ul>
+        <% mentor_to_mentee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :mentor_uid %>
+    <%= form.select :mentor_uid, User.all.collect { |u| [ u.first_name + ' ' + u.last_name, u.id ] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mentee_uid %>
+    <%= form.select :mentee_uid, User.all.collect { |u| [ u.first_name + ' ' + u.last_name, u.id ] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

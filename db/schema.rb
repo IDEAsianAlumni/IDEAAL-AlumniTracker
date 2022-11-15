@@ -10,40 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_12_234448) do
+ActiveRecord::Schema.define(version: 2022_11_07_190516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "member_trees", force: :cascade do |t|
+  create_table "group_to_users", force: :cascade do |t|
+    t.string "uid"
+    t.string "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "mentees", force: :cascade do |t|
-    t.string "first_name"
-    t.string "middle_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "phone_number"
+  create_table "groups", force: :cascade do |t|
+    t.string "year"
+    t.string "group_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "mentor_assignments", force: :cascade do |t|
-    t.integer "Mentor_id"
-    t.integer "Mentee_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "class_year"
-  end
-
-  create_table "mentors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "middle_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "phone_number"
+  create_table "mentor_to_mentees", force: :cascade do |t|
+    t.string "mentor_uid"
+    t.string "mentee_uid"
+    t.integer "status"
+    t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,7 +43,10 @@ ActiveRecord::Schema.define(version: 2022_10_12_234448) do
     t.string "last_name"
     t.string "uid"
     t.string "provider"
+    t.integer "grad_year"
     t.string "Major", default: "", null: false
+    t.string "phone_number", default: "", null: false
+    t.string "resume_link", default: "", null: false
     t.string "Professional_Track", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
