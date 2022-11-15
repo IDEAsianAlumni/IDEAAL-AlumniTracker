@@ -34,7 +34,7 @@ user2.save!
 user3 = User.new
 user3.first_name = "Yonghwan"
 user3.last_name = "Kim"
-user3.uid = "3333456789"
+user3.uid = "333456789"
 user3.Major = "GHIJ"
 user3.phone_number = "333456789"
 user3.Professional_Track = "acrobat"
