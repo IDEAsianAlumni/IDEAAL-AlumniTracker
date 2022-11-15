@@ -2,59 +2,20 @@
 <div class="tree">
 	<div class="director">
 		<ul class="list-group">
-			<li class="list-group-item">Director1 Name</li>
-			<li class="list-group-item">Director2 Name</li>
-			<li class="list-group-item">Director3 Name</li>
-			<li class="list-group-item">Director4 Name</li>
-			<li class="list-group-item">Director5 Name</li>
+			<% @directors.each do |user| %>
+				<li class="list-group-item"><%= user.first_name %> <%= user.last_name%> </li>
+			<% end %>  
 		</ul>
 	</div>
 	<div class="group">
 		<div class="group_l">
+			<% @arr_groups.each do |group| %>
 				<ul class="list-group">
-					<li class="list-group-item">An Group1</li>
-					<li class="list-group-item">A second item</li>
-					<li class="list-group-item">A third item</li>
-					<li class="list-group-item">A fourth item</li>
-					<li class="list-group-item">And a fifth one</li>
+				<% group.each do |member| %>
+					<li class="list-group-item"><%= member %></li>
+				<% end %>
 				</ul>
-			<ul class="list-group">
-				<li class="list-group-item">An Group1</li>
-				<li class="list-group-item">A second item</li>
-				<li class="list-group-item">A third item</li>
-				<li class="list-group-item">A fourth item</li>
-				<li class="list-group-item">And a fifth one</li>
-			</ul>
-		</div>
-		<div class="group_r">
-			<ul class="list-group">
-				<li class="list-group-item">An Group2</li>
-				<li class="list-group-item">A second item</li>
-				<li class="list-group-item">A third item</li>
-				<li class="list-group-item">A fourth item</li>
-				<li class="list-group-item">And a fifth one</li>
-			</ul>
-			<ul class="list-group">
-				<li class="list-group-item">An Group3</li>
-				<li class="list-group-item">A second item</li>
-				<li class="list-group-item">A third item</li>
-				<li class="list-group-item">A fourth item</li>
-				<li class="list-group-item">And a fifth one</li>
-			</ul>
-			<ul class="list-group">
-				<li class="list-group-item">An Group1</li>
-				<li class="list-group-item">A second item</li>
-				<li class="list-group-item">A third item</li>
-				<li class="list-group-item">A fourth item</li>
-				<li class="list-group-item">And a fifth one</li>
-			</ul>
-			<ul class="list-group">
-				<li class="list-group-item">An Group1</li>
-				<li class="list-group-item">A second item</li>
-				<li class="list-group-item">A third item</li>
-				<li class="list-group-item">A fourth item</li>
-				<li class="list-group-item">And a fifth one</li>
-			</ul>
+			<% end %>
 		</div>
 	</div>
 </div>
