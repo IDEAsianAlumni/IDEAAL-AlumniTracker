@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'directory', to: 'directory#index'
   get 'help', to: 'help#index'
+  get 'admin_help', to: 'admin_help#index'
   resources :mentor_to_mentees
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
