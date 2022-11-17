@@ -8,12 +8,10 @@
             font-size: 24px; 
             font-weight: bold;
         }
-
         h2 {
             font-size: 18px;
             font-weight: bold;
         }
-
         h3 {
             font-size: 14px;
             font-weight: bold;
@@ -23,9 +21,11 @@
 
 <br><br>
 
-<p>
-    For a printable version of this information, <a href="https://docs.google.com/document/d/159bE-XHDSPbQ8i-4jvT-z7aF3Hnn64nLZLgwF5YSsY4/edit?usp=sharing">CLICK HERE<a>.
-</p>
+<% if current_user and current_user.email =="admin@gmail.com"%>
+    <p>
+        For a printable version of this information, <a href="https://docs.google.com/document/d/1CzJV9ztIc_zw7ZT9LD728G7hlPIgx_0DNJflIMksRNY/edit#heading=h.nnv2nvbx9ybb" target="_blank">CLICK HERE<a>.
+    </p>
+<% end %>
 
 <br>
 
