@@ -44,10 +44,11 @@ ActiveRecord::Schema.define(version: 2022_11_07_190516) do
     t.string "uid"
     t.string "provider"
     t.integer "grad_year"
-    t.string "Major", default: "", null: false
+    t.string "major", default: "", null: false
+    t.string "minor", default: "", null: false
     t.string "phone_number", default: "", null: false
     t.string "resume_link", default: "", null: false
-    t.string "Professional_Track", default: "", null: false
+    t.string "professional_track", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
