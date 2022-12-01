@@ -1,9 +1,12 @@
 class AdminController < ApplicationController
+    @@group_current_year = "2022"
+
     def index
         @users = User.all
         @mentor_to_mentees = MentorToMentee.all
         @mtor 
         @mtee 
+        @groups = Group.all
     end
 
     def display_user(val)
@@ -15,6 +18,16 @@ class AdminController < ApplicationController
         end
     end
     helper_method :display_user
+
+    def display_group_members(id)
+        @arr_groups = []
+        GroupToUser.where(group_id: id).each do |group|
+            @users_in_group = User.by_uid(group.uid)
+            @arr_groups.push(@users_in_group.first.first_name + " " + @users_in_group.first.last_name)
+        end
+        return @arr_groups
+    end
+    helper_method :display_group_members
 
     def show
         
