@@ -1,41 +1,3 @@
-<head>
-    <style>
-        h1 {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        h2 {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        h3 {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        p {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        table {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        th {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        select {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        .div1 {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-    </style>
-</head>
-
-
 
 <div id="container">
   <div id="left_column">
@@ -99,5 +61,32 @@
         <% end %>
       </tbody>
     </table>
+
+    <h3>Group Mappings</h3>
+    <div class="group_mapping">
+      <% @groups.each do |group| %>
+        <button class="collapsible"><%= group.group_name %> <%= group.year %></button>
+        <div class="content">
+          <%= display_group_members(group.id) %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>

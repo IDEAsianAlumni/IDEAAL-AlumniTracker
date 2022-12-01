@@ -1,11 +1,11 @@
 class WelcomeController < ApplicationController
   def index
 
-    @arr_groups1 = GroupToUser.all.arr_uid_of_group("2022")
+    @arr_groups1 = GroupToUser.all.arr_uid_of_group(@@current_year)
     @groups = Group.by_year
     @directors = User.all # add directors objects here
     @arr_groups = Array.new
-    GroupToUser.all.arr_uid_of_group("2022").each do |group|
+    GroupToUser.all.arr_uid_of_group(@@current_year).each do |group|
       
       members = Array.new
       group.each do |uid|
