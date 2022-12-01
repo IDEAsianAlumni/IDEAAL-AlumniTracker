@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
     def index
-        @users = User.all
+        @Users = User.all
         @mentor_to_mentees = MentorToMentee.all
         @mtor 
         @mtee 
@@ -8,7 +8,7 @@ class AdminController < ApplicationController
 
     def display_user(val)
         begin
-            @mtor = @users.find(val)
+            @mtor = @Users.find(val)
             return( @mtor.first_name + ' ' + @mtor.last_name )
         rescue
             return ('MISSING')

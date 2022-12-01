@@ -17,6 +17,7 @@ user1.professional_track = "homeless"
 user1.email = 'nick@example.com'
 user1.password = 'valid_password'
 user1.password_confirmation = 'valid_password'
+user1.director_year = 0
 user1.save!
 
 user2 = User.new
@@ -29,6 +30,7 @@ user2.professional_track = "baker"
 user2.email = 'sami@example.com'
 user2.password = 'valid_password'
 user2.password_confirmation = 'valid_password'
+user2.director_year = 0
 user2.save!
 
 user3 = User.new
@@ -41,6 +43,7 @@ user3.professional_track = "acrobat"
 user3.email = 'yonghwan@example.com'
 user3.password = 'valid_password'
 user3.password_confirmation = 'valid_password'
+user3.director_year = 2022
 user3.save!
 
 user4 = User.new
@@ -53,7 +56,23 @@ user4.professional_track = "professor"
 user4.email = 'cyrus@example.com'
 user4.password = 'valid_password'
 user4.password_confirmation = 'valid_password'
+user4.director_year = 2022
 user4.save!
+
+user5 = User.new
+user5.first_name = "ADMIN"
+user5.last_name = "ISTRATOR"
+user5.uid = "0"
+user5.major = ""
+user5.phone_number = "1111111111"
+user5.professional_track = "NA"
+user5.email = 'admin@gmail.com'
+user5.password = 'asdf1234'
+user5.password_confirmation = 'asdf1234'
+user5.director_year = 0
+user5.save!
+
+
 
 Group.create!([
     {year: "2022", group_name: "Group1"},

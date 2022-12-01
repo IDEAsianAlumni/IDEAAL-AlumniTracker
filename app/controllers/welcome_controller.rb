@@ -3,7 +3,8 @@ class WelcomeController < ApplicationController
 
     @arr_groups1 = GroupToUser.all.arr_uid_of_group("2022")
     @groups = Group.by_year
-    @directors = User.all # add directors objects here
+    @directors = User.by_director_year(2022)
+
     @arr_groups = Array.new
     GroupToUser.all.arr_uid_of_group("2022").each do |group|
       

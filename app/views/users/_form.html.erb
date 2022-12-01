@@ -1,0 +1,11 @@
+<%= form_with(model: @User) do |form| %>
+  
+    <div class="field">
+        <%= form.label :director_year %>
+        <%= form.text_field :director_year %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
