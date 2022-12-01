@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
         # Prevent CSRF attacks by raising an exception.
     # For APIs, you may want to use :null_session instead.
-    @@current_year = "2021"
+    @@current_year = "2022"
 
     protected
         def configure_permitted_parameters
