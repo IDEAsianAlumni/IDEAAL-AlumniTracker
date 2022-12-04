@@ -58,18 +58,11 @@ user4.save!
 Group.create!([
     {year: "2022", group_name: "Group1"},
     {year: "2022", group_name: "Group2"},
-    {year: "2022", group_name: "Group3"},
-    {year: "2022", group_name: "Group4"},
-    {year: "2022", group_name: "Group5"}
 ])
+
 GroupToUser.create!([
     {uid:"123456789",group_id:"1"},
     {uid:"223456789",group_id:"1"},
-    {uid:"333456789",group_id:"1"},
-    {uid:"444456789",group_id:"1"},
-    {uid:"123456789",group_id:"2"},
     {uid:"333456789",group_id:"2"},
     {uid:"444456789",group_id:"2"},
-    {uid:"123456789",group_id:"3"},
-    {uid:"444456789",group_id:"3"}
 ])
