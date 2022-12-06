@@ -37,10 +37,10 @@ class WelcomeController < ApplicationController
           #get mentor or mentee status of user
           @mentor_to_mentees.each do |m2m|
             if (m2m.year.to_s == year.to_s)
-              if (m2m.mentor_uid.to_s == g2u.id.to_s)
+              if (m2m.mentor_uid.to_s == g2u.id.to_s && groups["mentor"].exclude?(g2u.uid))
                 groups["mentor"].push(g2u.uid)
               end
-              if (m2m.mentee_uid.to_s == g2u.id.to_s)
+              if (m2m.mentee_uid.to_s == g2u.id.to_s && groups["mentee"].exclude?(g2u.uid))
                 groups["mentee"].push(g2u.uid)
               end
             end
@@ -50,10 +50,6 @@ class WelcomeController < ApplicationController
       trees.push(groups)
     end
     
-    trees.each do |t|
-      puts "elem -> " + t.inspect()
-    end
-
     return trees
 
   end
