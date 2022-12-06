@@ -71,25 +71,33 @@
           <table>
             <thead>
               <tr>
-                <th>Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>UID</th>
                 <th colspan="3"></th>
               </tr>
             </thead>
             <tbody>
               <% display_group_members(group.id).each do |member| %>
                 <tr>
-                  <td><%= member %></td> 
+                  <td><%= member.first_name %></td> 
+                  <td><%= member.last_name %></td> 
+                  <td><%= member.uid %></td> 
                 </tr>
               <% end %>
             </tbody>
-          </table>
+          </table> 
           <%= link_to 'New Member to Group', new_group_to_user_path, class: "btn btn-info", style: "color:black;float:right" %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-
+<%# <%= link_to 'Link', params.merge({:per_page => 20}) might be way to pass parameter%> 
+<%# user = User.new do |u|
+  u.name = "David"
+  u.occupation = "Code Artist"
+end %>
 <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;

@@ -24,7 +24,7 @@ class AdminController < ApplicationController
         @arr_groups = []
         GroupToUser.where(group_id: id).each do |group|
             @users_in_group = User.by_uid(group.uid)
-            @arr_groups.push(@users_in_group.first.first_name + " " + @users_in_group.first.last_name)
+            @arr_groups.push(@users_in_group.first)
         end
         return @arr_groups
     end
