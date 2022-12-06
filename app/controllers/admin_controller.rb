@@ -7,6 +7,7 @@ class AdminController < ApplicationController
         @mtor 
         @mtee 
         @groups = Group.all
+        @group_to_user = GroupToUser.all
     end
 
     def display_user(val)
