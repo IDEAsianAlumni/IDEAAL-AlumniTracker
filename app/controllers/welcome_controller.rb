@@ -27,21 +27,27 @@ class WelcomeController < ApplicationController
   end
 
   def get_groups_for_year(year)
+    @users = User.all
     trees = Array.new
     Group.all.each do |g|
       #look for all groups w target year
       groups = {"mentor" => [], "mentee" => []}
+      groups_ids = {"mentor" => [], "mentee" => []}
       @group_to_users.each do |g2u|
         #find all users who were in target group
         if (g2u.group_id.to_s == g.id.to_s)
           #get mentor or mentee status of user
           @mentor_to_mentees.each do |m2m|
             if (m2m.year.to_s == year.to_s)
-              if (m2m.mentor_uid.to_s == g2u.id.to_s && groups["mentor"].exclude?(g2u.uid))
-                groups["mentor"].push(g2u.uid)
+              if (m2m.mentor_uid.to_s == g2u.id.to_s && groups_ids["mentor"].exclude?(g2u.uid))
+                usr = User.where(uid: g2u.uid).first
+                groups["mentor"].push( usr.first_name + ' ' + usr.last_name )
+                groups_ids["mentor"].push(g2u.uid)
               end
-              if (m2m.mentee_uid.to_s == g2u.id.to_s && groups["mentee"].exclude?(g2u.uid))
-                groups["mentee"].push(g2u.uid)
+              if (m2m.mentee_uid.to_s == g2u.id.to_s && groups_ids["mentee"].exclude?(g2u.uid))
+                usr = User.where(uid: g2u.uid).first
+                groups["mentee"].push( usr.first_name + ' ' + usr.last_name )
+                groups_ids["mentee"].push(g2u.uid)
               end
             end
           end
