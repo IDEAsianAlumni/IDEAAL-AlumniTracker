@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#index'
   get 'help', to: 'help#index'
   get 'about', to: 'about#index'
+  post 'admin', to: 'admin#index'
 
   resources :mentor_to_mentees
   devise_for :users, controllers: {

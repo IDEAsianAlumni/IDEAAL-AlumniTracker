@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-    @@group_current_year = "2022"
+    @group_current_year = "2022"
 
     def index
         @users = User.all
@@ -8,6 +8,10 @@ class AdminController < ApplicationController
         @mtee 
         @groups = Group.all
         @group_to_user = GroupToUser.all
+        if params[:year].present?
+            @group_current_year = params[:year]
+            @@current_year = params[:year]
+        end
     end
 
     def display_user(val)

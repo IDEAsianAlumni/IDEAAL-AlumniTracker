@@ -1,6 +1,11 @@
 
 <div id="container">
   <div id="left_column">
+  <%= form_with  url:'/admin', method: :post do |form|%>
+  <%= form.label :year, "Current Year:" %>
+  <%= form.text_field :year %>
+  <%= form.submit "Submit" %>
+  <% end %>
     <h3>Member</h3>
     <table>
       <thead>
