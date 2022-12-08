@@ -1,30 +1,62 @@
 // This file is to be used as a styleguide for the Directory page.
 // There should be no inline CSS within index.html.erb
 
-.major      { grid-area: major; }
-.minor      { grid-area: minor; }
-.prof_track { grid-area: prof_track; }
-.grad_year  { grid-area: grad_year; }
-.buttons    { margin-left: 70px; margin-right: 70px; grid-area: buttons; }
+.heading {
+    text-align: center;
+}
+
+.major      { grid-area: major; text-align: left;}
+.minor      { grid-area: minor; text-align: left;}
+.prof_track { grid-area: prof_track; text-align: left;}
+.grad_year  { grid-area: grad_year; text-align: left;}
+.buttons    { margin-left: 70px; margin-right: 70px; text-align: center; grid-area: buttons; }
 .data       { grid-area: data; }
 
 .grid-container {
     display: grid;
     grid-template-areas:
-        'major data data data data data'
-        'minor data data data data data'
-        'prof_track data data data data data'
-        'grad_year data data data data data'
-        'buttons data data data data data';
-
+        'major data'
+        'minor data'
+        'prof_track data'
+        'grad_year data'
+        'buttons data';
+    text-align: center;
     gap: 10px;
-    //background-color: #2196F3;
-    //padding: 10px;
 }
 
 .grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
-    //text-align: center;
-    //padding: 20px 0;
-    //font-size: 30px;
+}
+
+hr {
+    width: 250px;
+    margin-left: 70px;
+}
+
+table {
+    position: relative;
+    top: -30px;
+    border-collapse:separate;
+    border-radius:6px;
+}
+
+thead {
+    background-color: #2cc0d1;
+}
+
+tbody {
+    background-color: #e2f3f5;
+}
+
+td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+
+th {
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
 }
