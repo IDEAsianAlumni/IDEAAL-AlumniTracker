@@ -20,6 +20,7 @@ user0.password_confirmation = 'asdf1234'
 user0.save!
 
 user1 = User.new
+
 user1.first_name = "Mark"
 user1.last_name = "Marshall"
 user1.grad_year = "2020"
@@ -29,6 +30,7 @@ user1.minor = ""
 user1.phone_number = "1111111101"
 user1.professional_track = "N/A"
 user1.email = 'mark@gmail.com'
+user1.director_year = 2022
 user1.password = 'password'
 user1.password_confirmation = 'password'
 user1.save!
@@ -43,6 +45,7 @@ user2.minor = ""
 user2.phone_number = "1111111102"
 user2.professional_track = "PhD"
 user2.email = 'christine@gmail.com'
+user2.director_year = 2022
 user2.password = 'password'
 user2.password_confirmation = 'password'
 user2.save!

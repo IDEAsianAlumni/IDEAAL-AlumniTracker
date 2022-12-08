@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   scope :by_uid, ->(user_id) { where("uid = ?", user_id) }
+  scope :by_director_year, ->(director_year) { where("director_year = ?", director_year) }
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

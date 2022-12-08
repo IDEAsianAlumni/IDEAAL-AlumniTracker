@@ -2,7 +2,7 @@ class AdminController < ApplicationController
     @@group_current_year = "2022"
 
     def index
-        @users = User.all
+        @Users = User.all
         @mentor_to_mentees = MentorToMentee.all
         @mtor 
         @mtee 
@@ -12,12 +12,14 @@ class AdminController < ApplicationController
 
     def display_user(val)
         begin
+
             @mtor = @users.where(uid: val).first
             if @mtor.present?
                 return( @mtor.first_name + ' ' + @mtor.last_name )
             else
                 return ('MISSING')
             end
+            
         rescue
             return ('MISSING')
         end
