@@ -1,42 +1,10 @@
 <head>
-    <style>
-        h1 {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        h2 {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        h3 {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        p {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        table {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        th {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        select {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-        .div1 {
-            margin-left: 70px;
-            margin-right: 70px;
-        }
-    </style>
+  <%= stylesheet_link_tag 'general', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
 </head>
 
 <h1>Directory</h1>
-<p>(Refresh if filters get stuck)</p><br>
+<p>Howdy! Experiencing a wait time >10s? If so, please refresh this page.</p><br>
 
 <table>
   <thead>
@@ -621,11 +589,12 @@
     </select>
     <br><br><br>
 
-    <div class="div1">
-    <%=submit_tag("Search")%>
-    <%=submit_tag("Reset")%>
-    <% end%>
+    <div class="buttons">
+      <%=submit_tag("Search")%>
+      <%=submit_tag("Reset")%>
     </div>
+
+  <% end%>
 
   <tbody>
     <% @users.each do |user| %>
