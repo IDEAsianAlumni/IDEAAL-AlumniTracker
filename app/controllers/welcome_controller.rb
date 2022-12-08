@@ -5,10 +5,8 @@ class WelcomeController < ApplicationController
     @year = @@current_year
     @arr_groups1 = GroupToUser.all.arr_uid_of_group(@year)
     @groups = Group.by_year
-
     @group_year = Group.select(:year).order(:year).distinct
-    @directors = User.by_director_year(2022)
-
+    @directors = User.all # add directors objects here
     @arr_groups = Array.new
     @group_to_users = GroupToUser.all
     @mentor_to_mentees = MentorToMentee.all

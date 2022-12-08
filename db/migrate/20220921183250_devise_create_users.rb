@@ -11,12 +11,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.integer :grad_year
       t.string :major,              null: false, default: ""
       t.string :minor,              null: false, default: ""
-      t.string :phone_number,       null: false, default: ""
-      t.string :resume_link,        null: false, default: ""
-      t.string :professional_track, null: false, default: ""
+      t.string :phone_number,              null: false, default: ""
+      t.string :resume_link,               null: false, default: ""
+      t.string :professional_track,              null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.integer :director_year,     null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
