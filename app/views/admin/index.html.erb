@@ -55,7 +55,6 @@
             <td><%= display_user(mentor_to_mentee.mentee_uid) %></td>
             <td><%= mentor_to_mentee.status %></td>
             <td><%= mentor_to_mentee.year %></td>
-            <td><%= link_to 'Edit', edit_mentor_to_mentee_path(mentor_to_mentee) %></td>
             <td><%= link_to 'Delete', mentor_to_mentee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
@@ -78,16 +77,22 @@
               </tr>
             </thead>
             <tbody>
-              <% display_group_members(group.id).each do |member| %>
+              <% @group_to_user.where(group_id: group.id).each do |g2u| %>
                 <tr>
+                <% @users_in_group = User.by_uid(g2u.uid) %>
+                <% @users_in_group.each do |member| %>
                   <td><%= member.first_name %></td> 
                   <td><%= member.last_name %></td> 
                   <td><%= member.uid %></td> 
+                  <td><%= link_to 'Delete', g2u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
                 </tr>
               <% end %>
             </tbody>
           </table> 
-          <%= link_to 'New Member to Group', new_group_to_user_path, class: "btn btn-info", style: "color:black;float:right" %>
+          <%= link_to 'Delete Group', group, method: :delete, data: { confirm: 'Are you sure?'}, 
+            class: "btn btn-info", style: "background-color:red;color:black;float:right" %>
+          <%= link_to 'New Member to Group', new_group_to_user_path, class: "btn btn-info", style: "background-color:#27a5b5;color:black;float:right" %>
         </div>
       <% end %>
     </div>
