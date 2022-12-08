@@ -50,38 +50,21 @@ tr:nth-child(even) {
     transition: max-height 0.2s ease-out;
     background-color: #f1f1f1;
   }
-
-  h1 {
-    margin-left: 70px;
-    margin-right: 70px;
-}
-h2 {
-    margin-left: 70px;
-    margin-right: 70px;
-}
-h3 {
-    margin-left: 70px;
-    margin-right: 70px;
-}
 p {
-    margin-left: 70px;
-    margin-right: 70px;
-}
-table {
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 th {
     margin-left: 10px;
     margin-right: 10px;
 }
 select {
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 .div1 {
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .collapsible:after {

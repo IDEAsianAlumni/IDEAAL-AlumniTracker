@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= form.label :group_id %>
-    <%= form.text_field :group_id %>
+    <%= form.select :group_id, Group.all.collect { |g| [ g.group_name + ' ' + g.year.to_s, g.id ]} %>
   </div>
 
   <div class="actions">
