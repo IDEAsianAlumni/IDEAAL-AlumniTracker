@@ -28,6 +28,20 @@ class WelcomeController < ApplicationController
 
   end
 
+  def get_directors_for_year(year)
+    directors = Array.new
+    @mentor_to_mentees.each do |m2m|
+      if (m2m.year.to_s == year.to_s && m2m.mentor_uid.to_s == m2m.mentee_uid.to_s)
+        user = User.where(uid: m2m.mentor_uid).first
+        if user.present?
+          directors.push(user)
+        end
+      end
+    end
+    return directors
+  end
+  helper_method :get_directors_for_year
+
   def get_groups_for_year(year)
     @users = User.all
     trees = Array.new
