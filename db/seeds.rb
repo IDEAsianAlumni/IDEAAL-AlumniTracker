@@ -1,13 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+# This file contains all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-#https://stackoverflow.com/questions/12418584/seeding-users-with-devise-in-ruby-on-rails
 
+
+# THIS USER MUST NOT BE DELETED AS IT IS THE ADMINISTRATOR
+# if you are pushing updates to production, please be sure to change the admin password rightaway (default: asdf1234)
 user0 = User.new
 user0.first_name = "ADMINISTRATOR"
 user0.last_name = ""
@@ -231,14 +228,3 @@ user15.email = 'adam@gmail.com'
 user15.password = 'password'
 user15.password_confirmation = 'password'
 user15.save!
-
-#Group.create!([
-#    {year: "2022", group_name: "Group1"},
-#])
-
-#GroupToUser.create!([
-#    {uid:"123456789",group_id:"1"},
-#    {uid:"223456789",group_id:"1"},
-#    {uid:"333456789",group_id:"1"},
-#    {uid:"444456789",group_id:"1"},
-#])
