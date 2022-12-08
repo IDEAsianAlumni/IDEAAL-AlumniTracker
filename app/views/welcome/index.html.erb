@@ -43,8 +43,8 @@
 	<div class="group">
 		<% get_groups_for_year(@year).each do |dg| %>
 			<ul class="list-group">
-				<li class="list-group-item"><%= dg['mentor'].join(' ') %></li>
-				<li class="list-group-item"><%= dg['mentee'].join(' ') %></li>
+				<li class="list-group-item"><%= dg['mentor'].join('  ') %></li>
+				<li class="list-group-item"><%= dg['mentee'].join('  ') %></li>
 			</ul>
 		<% end %>
 	</div>
