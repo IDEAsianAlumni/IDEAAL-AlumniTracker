@@ -1,4 +1,6 @@
 class DirectoryController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     if params[:m].present?
       @users = User.where("major = ?", params[:m])

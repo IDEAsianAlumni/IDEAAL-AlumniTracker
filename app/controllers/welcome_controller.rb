@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @year = @@current_year
     @arr_groups1 = GroupToUser.all.arr_uid_of_group(@year)
