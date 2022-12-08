@@ -3,6 +3,7 @@ class AdminController < ApplicationController
 
     def index
         @users = User.all
+        @group_current_year = @@current_year
         @mentor_to_mentees = MentorToMentee.all
         @mtor 
         @mtee 
