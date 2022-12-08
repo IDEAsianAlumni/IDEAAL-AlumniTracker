@@ -1,8 +1,30 @@
-// Place all the styles related to the directory controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// This file is to be used as a styleguide for the Directory page.
+// There should be no inline CSS within index.html.erb
 
-.buttons {
-    margin-left: 70px;
-    margin-right: 70px;
+.major      { grid-area: major; }
+.minor      { grid-area: minor; }
+.prof_track { grid-area: prof_track; }
+.grad_year  { grid-area: grad_year; }
+.buttons    { margin-left: 70px; margin-right: 70px; grid-area: buttons; }
+.data       { grid-area: data; }
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'major data data data data data'
+        'minor data data data data data'
+        'prof_track data data data data data'
+        'grad_year data data data data data'
+        'buttons data data data data data';
+
+    gap: 10px;
+    //background-color: #2196F3;
+    //padding: 10px;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    //text-align: center;
+    //padding: 20px 0;
+    //font-size: 30px;
 }
