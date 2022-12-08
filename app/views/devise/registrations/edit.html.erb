@@ -7,12 +7,12 @@
 
   <h2 style="justify-content: center; display: flex;">Edit <%= resource_name.to_s.humanize %></h2>
 
-  <div class="edit_user">
+  <div class="form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
@@ -21,52 +21,52 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :password %> <i>("leave blank if you don't want to change it")</i><br />
+        <%= f.label :password %> <i>("leave blank if you don't want to change it")</i>
         <%= f.password_field :password, autocomplete: "new-password" %>
         <% if @minimum_password_length %>
-          <br />
+          
           <em><%= @minimum_password_length %> characters minimum</em>
         <% end %>
       </div>
     
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
       
       <div class="field">
-        <%= f.label :major %><br />
+        <%= f.label :major %>
         <%= f.select :major, ["","ABME", "ACCT", "ADEV", "AEGD", "AERO", "AGBL", "AGBU", "AGCJ", "AGEC", "AGED", "AGLS", "AGRO", "AGSC", "AGSM", "ALEC", "ALED", "ANBR", "ANLY", "ANSC", "ANTH", "APHY", "APMS", "ARCH", "ATMO", "ATTR", "BAEN", "BESC", "BHNR", "BICH", "BIED", "BIMS", "BIOL", "BIOT", "BMCB", "BMEN", "BUAD", "BUSI", "CAIA", "CDEV", "CECL", "CECN", "CEEN", "CHEM", "CHEN", "CHLL", "CHLS", "CHLT", "CLPY", "CLSS", "CNPM", "CNSA", "COMG", "COMM", "COSC", "COSL", "CPSC", "CPSL", "CPSY", "CVEN", "DDDS", "DDHS", "DDPH", "ECON", "ECOR", "EDAD", "EDAL", "EDAS", "EDCI", "EDHL", "EDHP", "EDIS", "EDKI", "EDSM", "EDTC", "EEBL", "EHRD", "ELEN", "ELIN", "EMBA", "EMHA", "EMPS", "ENDO", "ENGE", "ENGL", "ENGR", "ENGS", "ENGY", "ENSM", "ENST", "ENTC", "ENTO", "EPIE", "EPSY", "EQIM", "ESET", "ESSM", "FINC", "FINM", "FIVL", "FIVS", "FNPR", "FORS", "FSTC", "GACD", "GENE", "GEOG", "GEOL", "GEOP", "GEOS", "GEST", "GIST", "GTWY", "HADM", "HBCE", "HEED", "HISP", "HIST", "HLPH", "HLTH", "HORT", "HPCH", "HRDL", "HRDV", "HRMT", "HRSA", "IDIS", "INEN", "INFO", "INST", "INTA", "INTS", "IOPY", "ITDE", "JDLW", "KINE", "LAMD", "LAND", "LPDV", "MAAL", "MARA", "MARB", "MARC", "MARF", "MARM", "MARR", "MARS", "MART", "MAST", "MATH", "MAXF", "MBIO", "MDMD", "MDSC", "MEEN", "MEPS", "METL", "METR", "MGMT", "MISY", "MKTG", "MLER", "MMET", "MODL", "MSEN", "MUSC", "MXET", "NRDV", "NRED", "NRSC", "NUEN", "NURS", "NUSC", "NUTR", "OBIO", "OCEN", "OCNG", "OCRE", "OCSE", "OCSH", "OCSL", "OCST", "OMSP", "OMSR", "ORTH", "PEDD", "PERF", "PERI", "PETE", "PHAR", "PHEB", "PHEO", "PHEP", "PHIL", "PHLT", "PHPM", "PHTL", "PHYS", "PLBR", "PLPA", "PMBA", "POLS", "POSC", "PREP", "PROS", "PSAA", "PSSC", "PSYC", "REEP", "RENR", "RHEN", "RLEM", "RPTS", "RUSS", "SCMT", "SENG", "SOCI", "SOSC", "SPAN", "SPED", "SPMT", "SPSA", "SPSY", "STAT", "STJR", "TCMG", "TCMS", "TEAB", "TEAM", "TEBR", "TECR", "TEEC", "TEHS", "TGSC", "THAR", "TOXI", "URPL", "URPN", "URSC", "USAL", "USAR", "USBU", "USEH", "USGA", "USGE", "USLA", "USSC", "USVM", "VISL", "VIST", "VPHE", "VTMD", "VTPB", "WFSC", "WGST", "WISC", "WMHS", "ZOOL"] %>
       </div>
 
       <div class="field">
-        <%= f.label :minor %><br />
+        <%= f.label :minor %>
         <%= f.select :minor, ["","None","ABME", "ACCT", "ADEV", "AEGD", "AERO", "AGBL", "AGBU", "AGCJ", "AGEC", "AGED", "AGLS", "AGRO", "AGSC", "AGSM", "ALEC", "ALED", "ANBR", "ANLY", "ANSC", "ANTH", "APHY", "APMS", "ARCH", "ATMO", "ATTR", "BAEN", "BESC", "BHNR", "BICH", "BIED", "BIMS", "BIOL", "BIOT", "BMCB", "BMEN", "BUAD", "BUSI", "CAIA", "CDEV", "CECL", "CECN", "CEEN", "CHEM", "CHEN", "CHLL", "CHLS", "CHLT", "CLPY", "CLSS", "CNPM", "CNSA", "COMG", "COMM", "COSC", "COSL", "CPSC", "CPSL", "CPSY", "CVEN", "DDDS", "DDHS", "DDPH", "ECON", "ECOR", "EDAD", "EDAL", "EDAS", "EDCI", "EDHL", "EDHP", "EDIS", "EDKI", "EDSM", "EDTC", "EEBL", "EHRD", "ELEN", "ELIN", "EMBA", "EMHA", "EMPS", "ENDO", "ENGE", "ENGL", "ENGR", "ENGS", "ENGY", "ENSM", "ENST", "ENTC", "ENTO", "EPIE", "EPSY", "EQIM", "ESET", "ESSM", "FINC", "FINM", "FIVL", "FIVS", "FNPR", "FORS", "FSTC", "GACD", "GENE", "GEOG", "GEOL", "GEOP", "GEOS", "GEST", "GIST", "GTWY", "HADM", "HBCE", "HEED", "HISP", "HIST", "HLPH", "HLTH", "HORT", "HPCH", "HRDL", "HRDV", "HRMT", "HRSA", "IDIS", "INEN", "INFO", "INST", "INTA", "INTS", "IOPY", "ITDE", "JDLW", "KINE", "LAMD", "LAND", "LPDV", "MAAL", "MARA", "MARB", "MARC", "MARF", "MARM", "MARR", "MARS", "MART", "MAST", "MATH", "MAXF", "MBIO", "MDMD", "MDSC", "MEEN", "MEPS", "METL", "METR", "MGMT", "MISY", "MKTG", "MLER", "MMET", "MODL", "MSEN", "MUSC", "MXET", "NRDV", "NRED", "NRSC", "NUEN", "NURS", "NUSC", "NUTR", "OBIO", "OCEN", "OCNG", "OCRE", "OCSE", "OCSH", "OCSL", "OCST", "OMSP", "OMSR", "ORTH", "PEDD", "PERF", "PERI", "PETE", "PHAR", "PHEB", "PHEO", "PHEP", "PHIL", "PHLT", "PHPM", "PHTL", "PHYS", "PLBR", "PLPA", "PMBA", "POLS", "POSC", "PREP", "PROS", "PSAA", "PSSC", "PSYC", "REEP", "RENR", "RHEN", "RLEM", "RPTS", "RUSS", "SCMT", "SENG", "SOCI", "SOSC", "SPAN", "SPED", "SPMT", "SPSA", "SPSY", "STAT", "STJR", "TCMG", "TCMS", "TEAB", "TEAM", "TEBR", "TECR", "TEEC", "TEHS", "TGSC", "THAR", "TOXI", "URPL", "URPN", "URSC", "USAL", "USAR", "USBU", "USEH", "USGA", "USGE", "USLA", "USSC", "USVM", "VISL", "VIST", "VPHE", "VTMD", "VTPB", "WFSC", "WGST", "WISC", "WMHS", "ZOOL"] %>
       </div>
 
       <div class="field">
-        <%= f.label :grad_year %><br />
+        <%= f.label :grad_year %>
         <%= f.text_field :grad_year, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :professional_track %><br />
+        <%= f.label :professional_track %>
         <%= f.select :professional_track, ["","N/A", "PhD", "Nursing", "Pre-Law", "Pre-Dental", "Pre-Medicine", "Pre-Pharmacy", "Pre-Veterinary", "Pre-Optometry", "Pre-PA (Physician Assistant)", "Pre-PT (Physical Therapy)", "Pre-OT (Occupational Therapy)", "Other"]%>
       </div>
 
       <div class="field">
         <%= f.label :resume_link %>
-        <em>(Linkedin)</em><br />
+        <em>(Linkedin)</em>
         <%= f.text_field :resume_link, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :phone_number %><br />
+        <%= f.label :phone_number %>
         <%= f.text_field :phone_number, autocomplete: "1234567890" %>
       </div>
 
       <div class="field">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
         <%= f.password_field :current_password, autocomplete: "current-password" %>
       </div>
 
