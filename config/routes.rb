@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'help', to: 'help#index'
   get 'about', to: 'about#index'
 
+  get 'creators', to: 'help#creators'
+
   resources :mentor_to_mentees
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',

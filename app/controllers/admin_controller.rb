@@ -12,8 +12,12 @@ class AdminController < ApplicationController
 
     def display_user(val)
         begin
-            @mtor = @users.find(val)
-            return( @mtor.first_name + ' ' + @mtor.last_name )
+            @mtor = @users.where(uid: val).first
+            if @mtor.present?
+                return( @mtor.first_name + ' ' + @mtor.last_name )
+            else
+                return ('MISSING')
+            end
         rescue
             return ('MISSING')
         end

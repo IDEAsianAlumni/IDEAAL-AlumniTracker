@@ -32,7 +32,6 @@
 	<% end %>  
   </div>
 </div>
-<%= get_groups_for_year(@year) %>
 <div class="tree">
 	<div class="director">
 		<ul class="list-group">
@@ -42,14 +41,20 @@
 		</ul>
 	</div>
 	<div class="group">
-		<div class="group_l">
-			<% @arr_groups.each do |group| %>
-				<ul class="list-group">
-				<% group.each do |member| %>
-					<li class="list-group-item"><%= member %></li>
-				<% end %>
-				</ul>
-			<% end %>
-		</div>
+		<% get_groups_for_year(@year).each do |dg| %>
+			<ul class="list-group">
+				<li class="list-group-item"><%= dg['mentor'].join('  ') %></li>
+				<li class="list-group-item"><%= dg['mentee'].join('  ') %></li>
+			</ul>
+		<% end %>
 	</div>
 </div>
+
+<%# <% assignments = Hash.new() %>
+	<%# <% @mentor_assignments.each do |m_ass| %> 
+			<%# <% if assignments.has_key?(m_ass.Mentor_id) then %> 
+					<%# <% assignments[m_ass.Mentor_id].push(m_ass.Mentee_id) %> 
+			<%# <% else %> 
+					<%# <% assignments[m_ass.Mentor_id] = Array.new(1, m_ass.Mentee_id) %> 
+			<%# <% end %> 
+	<%# <% end %>  
