@@ -41,10 +41,10 @@
       <%= f.text_field :grad_year, autofocus: true %>
     </div>
 
-     <div class="field">
+    <div class="field">
       <%= f.label :professional_track %><br />
-      <%= f.text_field :professional_track, autofocus: true %>
-     </div>
+      <%= f.select :professional_track, ["","N/A", "PhD", "Nursing", "Pre-Law", "Pre-Dental", "Pre-Medicine", "Pre-Pharmacy", "Pre-Veterinary", "Pre-Optometry", "Pre-PA (Physician Assistant)", "Pre-PT (Physical Therapy)", "Pre-OT (Occupational Therapy)", "Other"]%>
+    </div>
 
     <div class="field">
       <%= f.label :phone_number %><br />

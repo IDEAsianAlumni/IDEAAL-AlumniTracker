@@ -17,5 +17,11 @@ class DirectoryController < ApplicationController
     else 
       @users = @users.all
     end
+    
+    if params[:g].present?
+      @users = @users.where("grad_year = ?", params[:g])
+    else 
+      @users = @users.all
+    end
   end
 end

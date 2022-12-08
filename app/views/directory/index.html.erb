@@ -35,7 +35,8 @@
     </style>
 </head>
 
-<h1>Directory</h1><br>
+<h1>Directory</h1>
+<p>(Refresh if filters get stuck)</p><br>
 
 <table>
   <thead>
@@ -46,7 +47,6 @@
       <th>Minor</th>
       <th>Professional Track</th>
       <th>Email</th>
-      <th>Phone Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -582,9 +582,41 @@
     <p>Filter by Professional Track </p>
     <select id="p" name = p>
       <option value="">Select</option>
-      <option value="Pre-Medical">Pre-Medical</option>
+      <option value="N/A">N/A</option>
+      <option value="PhD">PhD</option>
+      <option value="Nursing">Nursing</option>
+      <option value="Pre-Law">Pre-Law</option>
       <option value="Pre-Dental">Pre-Dental</option>
+      <option value="Pre-Medicine">Pre-Medicine</option>
+      <option value="Pre-Pharmacy">Pre-Pharmacy</option>
       <option value="Pre-Veterinary">Pre-Veterinary</option>
+      <option value="Pre-Optometry">Pre-Optometry</option>
+      <option value="Pre-PA (Physical Assistant)">Pre-PA (Physical Assistant)</option>
+      <option value="Pre-PT (Physical Therapy)">Pre-PA (Physical Therapy)</option>
+      <option value="Pre-OT (Occupational Therapy)">Pre-PA (Occupational Therapy)</option>
+      <option value="Other">Other</option>
+    </select>
+    <br><br><br>
+
+    <p>Filter by Grad Year </p>
+    <select id="g" name = g>
+      <option value="">Select</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
+      <option value="2027">2027</option>
+      <option value="2028">2028</option>
+      <option value="2029">2029</option>
+      <option value="2030">2030</option>
     </select>
     <br><br><br>
 
@@ -603,7 +635,6 @@
         <td><%= user.minor %></td>
         <td><%= user.professional_track %></td>
         <td><%= user.email %></td>
-        <td><%= user.phone_number %></td>
       </tr>
     <% end %>
   </tbody>
