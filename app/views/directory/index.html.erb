@@ -43,6 +43,7 @@
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
+      <th>Grad Year</th>
       <th>Major</th>
       <th>Minor</th>
       <th>Professional Track</th>
@@ -592,8 +593,8 @@
       <option value="Pre-Veterinary">Pre-Veterinary</option>
       <option value="Pre-Optometry">Pre-Optometry</option>
       <option value="Pre-PA (Physical Assistant)">Pre-PA (Physical Assistant)</option>
-      <option value="Pre-PT (Physical Therapy)">Pre-PA (Physical Therapy)</option>
-      <option value="Pre-OT (Occupational Therapy)">Pre-PA (Occupational Therapy)</option>
+      <option value="Pre-PT (Physical Therapy)">Pre-PT (Physical Therapy)</option>
+      <option value="Pre-OT (Occupational Therapy)">Pre-OT (Occupational Therapy)</option>
       <option value="Other">Other</option>
     </select>
     <br><br><br>
@@ -631,6 +632,7 @@
       <tr>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
+        <td><%= user.grad_year %></td>
         <td><%= user.major %></td>
         <td><%= user.minor %></td>
         <td><%= user.professional_track %></td>
