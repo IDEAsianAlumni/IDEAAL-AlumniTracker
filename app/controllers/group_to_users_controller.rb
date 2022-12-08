@@ -25,7 +25,7 @@ class GroupToUsersController < ApplicationController
 
     respond_to do |format|
       if @group_to_user.save
-        format.html { redirect_to group_to_user_url(@group_to_user), notice: "Group to user was successfully created." }
+        format.html { redirect_to '/admin', notice: "Group to user was successfully created." }
         format.json { render :show, status: :created, location: @group_to_user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class GroupToUsersController < ApplicationController
   def update
     respond_to do |format|
       if @group_to_user.update(group_to_user_params)
-        format.html { redirect_to group_to_user_url(@group_to_user), notice: "Group to user was successfully updated." }
+        format.html { redirect_to '/admin', notice: "Group to user was successfully updated." }
         format.json { render :show, status: :ok, location: @group_to_user }
       else
         format.html { render :edit, status: :unprocessable_entity }
