@@ -52,7 +52,7 @@ class GroupToUsersController < ApplicationController
     @group_to_user.destroy
 
     respond_to do |format|
-      format.html { redirect_to group_to_users_url, notice: "Group to user was successfully destroyed." }
+      format.html { redirect_to '/admin', notice: "Group to user was successfully destroyed." }
       format.json { head :no_content }
     end
   end
