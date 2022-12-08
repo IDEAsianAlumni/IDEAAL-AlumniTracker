@@ -47,6 +47,12 @@
     </div>
 
     <div class="field">
+      <%= f.label :resume_link %>
+      <em>(Linkedin)</em><br />
+      <%= f.text_field :resume_link, autofocus: true %>
+    </div>
+
+    <div class="field">
       <%= f.label :phone_number %><br />
       <%= f.text_field :phone_number, autocomplete: "1234567890" %>
     </div>

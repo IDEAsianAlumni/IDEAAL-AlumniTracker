@@ -606,19 +606,28 @@
             <th>Major</th>
             <th>Minor</th>
             <th>Professional Track</th>
+            <th>Resume</th>
             <th>Email</th>
           </tr>
         </thead>
         <tbody>
           <% @users.each do |user| %>
             <tr>
+            <% if user.email !="admin@gmail.com"%>
               <td><%= user.first_name %></td>
               <td><%= user.last_name %></td>
               <td><%= user.grad_year %></td>
               <td><%= user.major %></td>
               <td><%= user.minor %></td>
               <td><%= user.professional_track %></td>
+              <% if user.resume_link!="" %>
+                <td><a href=<%= user.resume_link %>> Linkedin </a></td>
+              <% else %>
+                <td><%= user.resume_link %></td>
+              <% end %>
+
               <td><%= user.email %></td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>
