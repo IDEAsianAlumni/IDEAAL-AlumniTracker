@@ -35,7 +35,8 @@
 <div class="tree">
 	<div class="director">
 		<ul class="list-group">
-			<% @directors.each do |user| %>
+			<h3> Directors </h3>
+			<% get_directors_for_year(@year).each do |user| %>
 				<li class="list-group-item"><%= user.first_name %> <%= user.last_name%> </li>
 			<% end %>  
 		</ul>
