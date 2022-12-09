@@ -25,8 +25,9 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to group_url(@group), notice: "Group was successfully created." }
+        format.html { redirect_to '/admin', notice: "Group was successfully created." }
         format.json { render :show, status: :created, location: @group }
+
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @group.errors, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class GroupsController < ApplicationController
     @group.destroy
 
     respond_to do |format|
-      format.html { redirect_to groups_url, notice: "Group was successfully destroyed." }
+      format.html { redirect_to '/admin', notice: "Group was successfully destroyed." }
       format.json { head :no_content }
     end
   end

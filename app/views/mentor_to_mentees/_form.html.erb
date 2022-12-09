@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :mentor_uid %>
-    <%= form.select :mentor_uid, User.all.collect { |u| [ u.first_name + ' ' + u.last_name, u.id ] } %>
+    <%= form.select :mentor_uid, User.all.collect { |u| [ u.first_name + ' ' + u.last_name, u.uid ] } %>
   </div>
 
   <div class="field">
     <%= form.label :mentee_uid %>
-    <%= form.select :mentee_uid, User.all.collect { |u| [ u.first_name + ' ' + u.last_name, u.id ] } %>
+    <%= form.select :mentee_uid, User.all.collect { |u| [ u.first_name + ' ' + u.last_name, u.uid ] } %>
   </div>
 
   <div class="field">

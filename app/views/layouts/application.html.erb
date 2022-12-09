@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome! IDEAAL</title>
+    <title>IDEAAL - Alumni Tracker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,46 +14,45 @@
   <body>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <%# <img src="app/assets/images/IDEAAL_Logo_Wordmark_Color-600x210.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> %>
-        <%= image_tag("IDEAAL_Logo_Wordmark_Color-600x210.jpg") %>
-        
-      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          <a class="navbar-brand" href="/">
+        <%# <img src="app/assets/images/IDEAAL_Logo_Wordmark_Color-600x210.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> %>
+            <%= image_tag("IDEAAL_Logo_Wordmark_Color-600x210.jpg") %>
+            
           </a>
+          <%# <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          </a> %>
           <% if current_user and current_user.email =="admin@gmail.com"%>
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
-              <li><a href="/admin" class="nav-link px-2 link-dark">Admin</a></li>
-              <li><a href="/directory" class="nav-link px-2 link-dark">Directory</a></li>
-              <li><a href="/help" class="nav-link px-2 link-dark">Help</a></li>
-              <li><a href="/admin_help" class="nav-link px-2 link-dark">Admin Help</a></li>
-              <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+              <li><a href="/" class="nav-link nlink">Home</a></li>
+              <li><a href="/directory" class="nav-link nlink">Directory</a></li>
+              <li><a href="/admin" class="nav-link nlink">Admin</a></li>
+              <li><a href="/help" class="nav-link nlink">Help</a></li>
+              <li><a href="/about" class="nav-link nlink">About</a></li>
             </ul>
           <% else %>
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
-              <li><a href="/directory" class="nav-link px-2 link-dark">Directory</a></li>
-              <li><a href="/help" class="nav-link px-2 link-dark">Help</a></li>
-              <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+              <li><a href="/" class="nav-link nlink">Home</a></li>
+              <li><a href="/directory" class="nav-link nlink">Directory</a></li>
+              <li><a href="/help" class="nav-link nlink">Help</a></li>
+              <li><a href="/about" class="nav-link nlink">About</a></li>
             </ul>
           <% end %>
           <% if current_user %>
             <div class="col-md-3 text-end">
-              <%= current_user.email %>
-              <button type="button" class="btn btn-outline-primary me-2"><%= link_to "Edit Account", edit_user_registration_path %></button>
-              <button type="button" class="btn btn-primary"><%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %></button>
+              <p id="user_name"><%= current_user.first_name %> <%= current_user.last_name %></p>
+              <button type="button" class="nbut btn btn-outline-primary me-2"><%= link_to "Edit Account", edit_user_registration_path %></button>
+              <button type="button" class="nbut btn btn-primary"><%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete %></button>
             </div>
           <% else %>
             <div class="col-md-3 text-end">
-              <button type="button" class="btn btn-outline-primary me-2"><%= link_to "Login", new_user_session_path %></button>
-              <button type="button" class="btn btn-primary"><%= link_to "Create Account", new_user_registration_path %></button>
+              <button type="button" class="nbut btn"><%= link_to "Login", new_user_session_path %></button>
+              <button type="button" class="nbut btn"><%= link_to "Create Account", new_user_registration_path %></button>
             </div>
           <% end %>
           

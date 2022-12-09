@@ -1,58 +1,55 @@
-
+<div class="dropdown">
+  <button class="dropbtn"><%= @year %></button>
+  <div class="dropdown-content">
+  	<% @group_year.each do |g_year| %>
+		<% if g_year.year == "2022" %>
+			<a href='/year/_2022'>2022</a>
+		<% end %> 
+		<% if g_year.year == "2023" %>
+			<a href='/year/_2023'>2023</a>
+		<% end %> 
+		<% if g_year.year == "2024" %>
+			<a href='/year/_2024'>2024</a>
+		<% end %> 
+		<% if g_year.year == "2025" %>
+			<a href='/year/_2025'>2025</a>
+		<% end %> 
+		<% if g_year.year == "2026" %>
+			<a href='/year/_2026'>2026</a>
+		<% end %> 
+		<% if g_year.year == "2027" %>
+			<a href='/year/_2027'>2027</a>
+		<% end %> 
+		<% if g_year.year == "2028" %>
+			<a href='/year/_2028'>2028</a>
+		<% end %> 
+		<% if g_year.year == "2029" %>
+			<a href='/year/_2029'>2029</a>
+		<% end %> 
+		<% if g_year.year == "2030" %>
+			<a href='/year/_2030'>2030</a>
+		<% end %> 
+	<% end %>  
+  </div>
+</div>
 <div class="tree">
 	<div class="director">
 		<ul class="list-group">
-			<% @directors.each do |user| %>
+			<h3> Directors </h3>
+			<% get_directors_for_year(@year).each do |user| %>
 				<li class="list-group-item"><%= user.first_name %> <%= user.last_name%> </li>
 			<% end %>  
 		</ul>
 	</div>
 	<div class="group">
-		<div class="group_l">
-			<% @arr_groups.each do |group| %>
-				<ul class="list-group">
-				<% group.each do |member| %>
-					<li class="list-group-item"><%= member %></li>
-				<% end %>
-				</ul>
-			<% end %>
-		</div>
+		<% get_groups_for_year(@year).each do |dg| %>
+			<ul class="list-group">
+				<li class="list-group-item"><%= dg['mentor'].join('  ') %></li>
+				<li class="list-group-item"><%= dg['mentee'].join('  ') %></li>
+			</ul>
+		<% end %>
 	</div>
 </div>
-
-<style>
-.tree {
-	justify-content: center;
-	margin-left: 20%;
-	margin-right: 20%;
-}
-.group {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: 25px 40px;
-	justify-content: center;
-}
-.group_l {
-	display: flex;
-	flex-direction: column;
-
-}
-.group_r {
-	display: flex;
-	flex-direction: column;
-	
-}
-.list-group {
-	border: 1px solid black;
-	margin: 5px;
-}
-.director {
-	display: flex;
-	justify-content: center;
-	margin: 40px;
-}
-</style>
 
 <%# <% assignments = Hash.new() %>
 	<%# <% @mentor_assignments.each do |m_ass| %> 

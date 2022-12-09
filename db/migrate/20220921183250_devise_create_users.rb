@@ -9,10 +9,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :uid
       t.string :provider
       t.integer :grad_year
-      t.string :Major,              null: false, default: ""
+      t.string :major,              null: false, default: ""
+      t.string :minor,              null: false, default: ""
       t.string :phone_number,              null: false, default: ""
       t.string :resume_link,               null: false, default: ""
-      t.string :Professional_Track,              null: false, default: ""
+      t.string :professional_track,              null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 

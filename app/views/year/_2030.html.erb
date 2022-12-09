@@ -1,0 +1,60 @@
+<div class="dropdown">
+  <button class="dropbtn"><%= @year %></button>
+  <div class="dropdown-content">
+  	<% @group_year.each do |g_year| %>
+		<% if g_year.year == "2022" %>
+			<a href='/year/_2022'>2022</a>
+		<% end %> 
+		<% if g_year.year == "2023" %>
+			<a href='/year/_2023'>2023</a>
+		<% end %> 
+		<% if g_year.year == "2024" %>
+			<a href='/year/_2024'>2024</a>
+		<% end %> 
+		<% if g_year.year == "2025" %>
+			<a href='/year/_2025'>2025</a>
+		<% end %> 
+		<% if g_year.year == "2026" %>
+			<a href='/year/_2026'>2026</a>
+		<% end %> 
+		<% if g_year.year == "2027" %>
+			<a href='/year/_2027'>2027</a>
+		<% end %> 
+		<% if g_year.year == "2028" %>
+			<a href='/year/_2028'>2028</a>
+		<% end %> 
+		<% if g_year.year == "2029" %>
+			<a href='/year/_2029'>2029</a>
+		<% end %> 
+		<% if g_year.year == "2030" %>
+			<a href='/year/_2030'>2030</a>
+		<% end %> 
+	<% end %>  
+  </div>
+</div>
+<div class="tree">
+	<div class="director">
+		<ul class="list-group">
+			<% @directors.each do |user| %>
+				<li class="list-group-item"><%= user.first_name %> <%= user.last_name%> </li>
+			<% end %>  
+		</ul>
+	</div>
+	<div class="group">
+		<% get_groups_for_year(@year).each do |dg| %>
+			<ul class="list-group">
+				<li class="list-group-item"><%= dg['mentor'].join('  ') %></li>
+				<li class="list-group-item"><%= dg['mentee'].join('  ') %></li>
+			</ul>
+		<% end %>
+	</div>
+</div>
+
+<%# <% assignments = Hash.new() %>
+	<%# <% @mentor_assignments.each do |m_ass| %> 
+			<%# <% if assignments.has_key?(m_ass.Mentor_id) then %> 
+					<%# <% assignments[m_ass.Mentor_id].push(m_ass.Mentee_id) %> 
+			<%# <% else %> 
+					<%# <% assignments[m_ass.Mentor_id] = Array.new(1, m_ass.Mentee_id) %> 
+			<%# <% end %> 
+	<%# <% end %>  
