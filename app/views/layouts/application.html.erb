@@ -47,13 +47,13 @@
           <% if current_user %>
             <div class="col-md-3 text-end">
               <p id="user_name"><%= current_user.first_name %> <%= current_user.last_name %></p>
-              <button type="button" class="nbut btn btn-outline-primary me-2"><%= link_to "Edit Account", edit_user_registration_path, class: "login_btn" %></button>
-              <button type="button" class="nbut btn btn-primary"><%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete, class: "login_btn" %></button>
+              <%= link_to "Edit Account", edit_user_registration_path, class: "btn btn-outline-primary", id: "login_btn" %>
+              <%= button_to "Logout", destroy_user_session_path, data: {turbo: "false"}, method: :delete, class: "btn btn-outline-primary", id: "login_btn" %>
             </div>
           <% else %>
             <div class="col-md-3 text-end">
-              <button type="button" class="nbut btn"><%= link_to "Login", new_user_session_path, class: "login_btn" %></button>
-              <button type="button" class="nbut btn"><%= link_to "Create Account", new_user_registration_path, class: "login_btn" %></button>
+              <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary", id: "login_btn" %>
+              <%= link_to "Create Account", new_user_registration_path, class: "btn btn-outline-primary" , id: "login_btn"%>
             </div>
           <% end %>
           
