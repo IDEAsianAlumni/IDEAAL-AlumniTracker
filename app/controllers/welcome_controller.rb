@@ -60,13 +60,17 @@ class WelcomeController < ApplicationController
             if (m2m.year.to_s == year.to_s)
               if (m2m.mentor_uid.to_s == g2u.uid.to_s && groups_ids["mentor"].exclude?(g2u.uid.to_s))
                 usr = User.where(uid: g2u.uid).first
-                groups["mentor"].push( usr.first_name + ' ' + usr.last_name )
-                groups_ids["mentor"].push(g2u.uid.to_s)
+                if usr.present?
+                  groups["mentor"].push( usr.first_name + ' ' + usr.last_name )
+                  groups_ids["mentor"].push(g2u.uid.to_s)
+                end
               end
               if (m2m.mentee_uid.to_s == g2u.uid.to_s && groups_ids["mentee"].exclude?(g2u.uid.to_s))
                 usr = User.where(uid: g2u.uid).first
-                groups["mentee"].push( usr.first_name + ' ' + usr.last_name )
-                groups_ids["mentee"].push(g2u.uid.to_s)
+                if usr.present?
+                  groups["mentee"].push( usr.first_name + ' ' + usr.last_name )
+                  groups_ids["mentee"].push(g2u.uid.to_s)
+                end
               end
             end
           end
