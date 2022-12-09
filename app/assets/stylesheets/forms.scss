@@ -1,61 +1,64 @@
-// Please make sure to use the ".edit" prefix before
+// Please make sure to use the ".form" prefix before
 // each tag to make them specific to the Edit Page
 
-.edit form {
+.form form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-left: 25%;
 }
 
-.edit select {
+.form select {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-left: 25%;
 }
 
-.edit label {
+.form label {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-left: 25%;
 }
 
-.edit i {
+.form i {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-left: 25%;
 }
 
-.edit em {
+.form em {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-left: 25%;
 }
 
-.edit input {
+.form input {
     margin-left: 25%;
 }
 
-.edit hr {
+.form hr {
     width: 400px;
     //display: flex;
-    //justify-content: center;
+    justify-content: center;
     //flex-direction: column;
-    margin-left: 25%;
+    //margin-left: 25%;
 }
 
-.edit p {
-    font-size: 14px;
+.form p {
+    font-size: 13px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-left: 25%;
 }
 
-.edit button {
+.form button {
     padding-right: 0px;
 }
+
+// The following is just for the deletion button.
+
