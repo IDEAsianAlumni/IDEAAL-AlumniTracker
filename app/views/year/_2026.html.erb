@@ -1,61 +1,61 @@
-<div class="dropdown">
-  <button class="dropbtn"><%= @year %></button>
+div class="dropdown">
+  <button class="dropbtn">2026-2027</button>
   <div class="dropdown-content">
   	<% @group_year.each do |g_year| %>
 		<% if g_year.year == "2022" %>
-			<a href='/year/_2022'>2022</a>
+			<a href='/year/_2022'>2022-2023</a>
 		<% end %> 
 		<% if g_year.year == "2023" %>
-			<a href='/year/_2023'>2023</a>
+			<a href='/year/_2023'>2023-2024</a>
 		<% end %> 
 		<% if g_year.year == "2024" %>
-			<a href='/year/_2024'>2024</a>
+			<a href='/year/_2024'>2024-2025</a>
 		<% end %> 
 		<% if g_year.year == "2025" %>
-			<a href='/year/_2025'>2025</a>
+			<a href='/year/_2025'>2025-2026</a>
 		<% end %> 
 		<% if g_year.year == "2026" %>
-			<a href='/year/_2026'>2026</a>
+			<a href='/year/_2026'>2026-2027</a>
 		<% end %> 
 		<% if g_year.year == "2027" %>
-			<a href='/year/_2027'>2027</a>
+			<a href='/year/_2027'>2027-2028</a>
 		<% end %> 
 		<% if g_year.year == "2028" %>
-			<a href='/year/_2028'>2028</a>
+			<a href='/year/_2028'>2028-2029</a>
 		<% end %> 
 		<% if g_year.year == "2029" %>
-			<a href='/year/_2029'>2029</a>
+			<a href='/year/_2029'>2029-2030</a>
 		<% end %> 
 		<% if g_year.year == "2030" %>
-			<a href='/year/_2030'>2030</a>
+			<a href='/year/_2030'>2030-2031</a>
 		<% end %> 
 	<% end %>  
   </div>
 </div>
-<div class="tree">
-	<div class="director">
-		<ul class="list-group">
-			<h3> Directors </h3>
-			<% get_directors_for_year(@year).each do |user| %>
-				<li class="list-group-item"><%= user.first_name %> <%= user.last_name%> </li>
-			<% end %>  
-		</ul>
-	</div>
-	<div class="group">
-		<% get_groups_for_year(@year).each do |dg| %>
-			<ul class="list-group">
-				<li class="list-group-item"><%= dg['mentor'].join('  ') %></li>
-				<li class="list-group-item"><%= dg['mentee'].join('  ') %></li>
-			</ul>
-		<% end %>
-	</div>
-</div>
 
-<%# <% assignments = Hash.new() %>
-	<%# <% @mentor_assignments.each do |m_ass| %> 
-			<%# <% if assignments.has_key?(m_ass.Mentor_id) then %> 
-					<%# <% assignments[m_ass.Mentor_id].push(m_ass.Mentee_id) %> 
-			<%# <% else %> 
-					<%# <% assignments[m_ass.Mentor_id] = Array.new(1, m_ass.Mentee_id) %> 
-			<%# <% end %> 
-	<%# <% end %>  
+<div class="tree">
+
+	<h1>IDEAAL Family Tree</h1>
+
+
+		<div class="director">
+			<ul class="list-group">
+				<h2> Directors </h2>
+				<% get_directors_for_year(@year).each do |user| %>
+					<li class="list-group-item"><%= user.first_name %> <%= user.last_name%> </li>
+				<% end %>  
+			</ul>
+		</div>
+		<div class="group">
+			<% get_groups_for_year(@year).each do |dg| %>
+				<ul class="list-group">
+					<li class="list-group-item"><h3>Mentors: </h3><%= dg['mentor'].join(' & ') %></li>
+					<div class="downwards">
+						<span class="vertical-line"></span><p><i class="arrow down"></i></p>
+					</div>
+					<li class="list-group-item"><h3>Mentees: </h3><%= dg['mentee'].join(' | ') %></li>
+				</ul>
+			<% end %>
+		</div>
+
+</div>
