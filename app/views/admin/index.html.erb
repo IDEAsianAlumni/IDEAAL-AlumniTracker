@@ -1,5 +1,6 @@
 <body>
   <div class="admin">
+  <% if current_user and current_user.email =="admin@gmail.com"%>
 
     <div class="grid-container">
 
@@ -129,5 +130,6 @@
       });
     }
     </script>
+    <% end %>
   </div>
 </body>
