@@ -5,7 +5,6 @@ RSpec.describe "mentor_to_mentees/edit", type: :view do
     @mentor_to_mentee = assign(:mentor_to_mentee, MentorToMentee.create!(
       mentor_uid: "MyString",
       mentee_uid: "MyString",
-      status: 1,
       year: 1
     ))
   end
