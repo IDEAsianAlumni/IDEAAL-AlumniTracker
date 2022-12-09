@@ -1,7 +1,6 @@
 // Please make sure to use the ".form" prefix before each
 // tag to make them specific to the Edit and Sign Up Pages
 
-
 .form form {
     display: flex;
     justify-content: center;
@@ -42,11 +41,8 @@
 }
 
 .form hr {
-    width: 400px;
-    //display: flex;
-    justify-content: center;
-    //flex-direction: column;
-    //margin-left: 25%;
+    width: 250px;
+    margin: auto;
 }
 
 .form p {
@@ -57,9 +53,26 @@
     margin-left: 25%;
 }
 
-.form button {
-    padding-right: 0px;
+// The following is just for the Sign Up button.
+.log_in {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 45%;
 }
 
-// The following is just for the deletion button.
+// The following is just for the Delete Account button.
+.delete p {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 46.60%;
+}
+
+.delete input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 46.25%;
+}
 
