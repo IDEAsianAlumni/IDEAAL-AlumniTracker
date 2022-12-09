@@ -1,19 +1,20 @@
 <body>
   <div class="admin">
+  <% if current_user and current_user.email =="admin@gmail.com"%>
 
     <div class="grid-container">
 
       <div class="curr_year">
-        <br><h3>Current Year: <%= @group_current_year %></h3>
+        <br><h2>Current Year: <%= @group_current_year %></h2>
         <%= form_with  url:'/admin', method: :post do |form|%>
-        <%= form.label :year, "Current Year:" %>
+        <%= form.label :year, "Enter Current Year:" %>
         <%= form.text_field :year %><br><br>
-        <%= form.submit "Submit" %>
+        <%= form.submit "Submit", :class=> "btn btn-outline-primary btn-sm"%>
         <% end %><br><hr><br>
       </div>
 
       <div class="user_crud">
-        <h3>Member Management</h3><br>
+        <h2>Member Management</h2><br>
         <table>
           <thead>
             <tr>
@@ -34,7 +35,7 @@
                 <td><%= user.email %></td>
                 <td><%= user.phone_number %></td>
                 <% if user.email != "admin@gmail.com" %>
-                <td><%= button_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= button_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-outline-danger btn-sm" %></td>
                 <% else %>
                 <% end %>
               </tr>
@@ -44,8 +45,9 @@
       </div>
 
       <div class="mapping_crud">
-        <br><h3>Mentor to Mentee Mappings</h3>
-        <%= link_to 'Generate new mapping', new_mentor_to_mentee_path %><br>
+        <br><h2>Mentor to Mentee Mappings</h2>
+        <%= link_to 'Generate new mapping', new_mentor_to_mentee_path, :class=> "btn btn-outline-primary btn-sm"%><br>
+        <br>
         <table>
           <thead>
             <tr>
@@ -128,5 +130,6 @@
       });
     }
     </script>
+    <% end %>
   </div>
 </body>
