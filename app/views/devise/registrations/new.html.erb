@@ -1,7 +1,7 @@
 <body>
   <div class="form">
 
-    <br><h2 style="justify-content: center; display: flex;">Sign Up</h2><br>
+    <br><h2>Sign Up</h2><br>
     
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -74,7 +74,7 @@
 
         <br>
         <div class="actions">
-          <%= f.submit "Sign Up" %>
+          <%= f.submit "Sign Up" , :class=> "btn btn-outline-secondary"%>
         </div>
       <% end %>
     
