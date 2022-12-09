@@ -23,15 +23,37 @@ p {
     margin-left: 70px;
     margin-right: 70px;
 }
-table {
-    margin-left: 70px;
-    margin-right: 70px;
-}
-th {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+
+
 select {
     margin-left: 70px;
     margin-right: 70px;
+}
+
+table {
+    position: relative;
+    top: -30px;
+    border-collapse:separate;
+    border-radius:6px;
+}
+
+thead {
+    background-color: #2cc0d1;
+}
+
+tbody {
+    background-color: #e2f3f5;
+}
+
+td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+
+th {
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
 }

@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- .navbar-brand:hover {
+ .navbar-brand:hover{
     background-color: aliceblue;
  }
 
@@ -21,4 +21,16 @@ body {
     margin:0
 }
 
+#edit_login:hover {
+    background-color: #2CC0D2;
+}
+
+#nav-link:hover {
+    background-color: aliceblue;
+
+}
+
+.login_btn:hover {
+    background-color: #2CC0D2;
+}
 

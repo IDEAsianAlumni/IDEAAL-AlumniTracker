@@ -9,10 +9,9 @@
 .minor      { grid-area: minor; text-align: left;}
 .prof_track { grid-area: prof_track; text-align: left;}
 .grad_year  { grid-area: grad_year; text-align: left;}
-.buttons    { margin-left: 70px; margin-right: 70px; text-align: center; grid-area: buttons; }
 .data       { grid-area: data; }
 
-.grid-container {
+.directory .grid-container {
     display: grid;
     grid-template-areas:
         'major data'
@@ -24,39 +23,17 @@
     gap: 10px;
 }
 
-.grid-container > div {
+.directory .grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-hr {
+.directory hr {
     width: 250px;
     margin-left: 70px;
 }
 
-table {
-    position: relative;
-    top: -30px;
-    border-collapse:separate;
-    border-radius:6px;
-}
-
-thead {
-    background-color: #2cc0d1;
-}
-
-tbody {
-    background-color: #e2f3f5;
-}
-
-td, th {
-    border-left:solid black 1px;
-    border-top:solid black 1px;
-}
-
-th {
-    border-top: none;
-}
-
-td:first-child, th:first-child {
-     border-left: none;
+.directory .buttons {
+    grid-area: buttons;
+    text-align: left;
+    margin-left: 70px;
 }
