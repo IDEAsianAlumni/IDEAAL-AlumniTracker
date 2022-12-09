@@ -1,17 +1,59 @@
-#container {
-    margin-top: 2em;
-    margin-left: 2em;
-    margin-right: 2em;
-    display: flex;
-    justify-content: space-between;
+.curr_year {
+    grid-area: curr_year;
+    margin-left: 100px;
+    text-align: center;
 }
 
-#left_column{
-    width: 50%;
+.curr_year hr {
+    margin: auto;
+    width: 400px;
 }
 
-#right_column{
-    width: 50%;
+.user_crud {
+    grid-area: user_crud;
+    text-align: center;
+}
+
+.user_crud table {
+    margin-left: 100px;
+    text-align: center;
+}
+
+.mapping_crud {
+    grid-area: mapping_crud;
+    text-align: center;
+}
+
+.group_crud {  
+    grid-area: group_crud;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+}
+
+.group_crud a {  
+    margin-bottom: 20px;
+}
+
+.group_crud hr {  
+    margin: auto;
+    width: 90%;
+}
+
+.admin .grid-container {
+    display: grid;
+    grid-template-areas:
+        'curr_year curr_year'
+        'user_crud mapping_crud'
+        'user_crud mapping_crud'
+        'group_crud group_crud';
+    text-align: center;
+    gap: 10px;
+}
+
+.admin .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 table {
