@@ -30,7 +30,19 @@ body {
 
 }
 
-.login_btn:hover {
+/* .login_btn button  {
+    display:none;
+} */
+
+#login_btn {
+    border: 2px solid #2CC0D2;
+    border-radius: 8px;
+    color: #556466;
+    /* padding: 10px 18px; */
+}
+#login_btn:hover {
     background-color: #2CC0D2;
+    color:white;
+    transition-duration: 0.4s ;
 }
 
