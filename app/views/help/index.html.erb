@@ -27,14 +27,16 @@
     throughout the maintenance period until the project is closed (at the end of the TAMU Fall 2023 Semester).
 
     <br><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<b>Question 1</b>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b> How can I be shown one the Family Tree?</b>
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Answer 1
-
+    &nbsp;&nbsp;&nbsp;&nbsp;    Reach out to a Director and they will be able to add you to the Family Tree page using,
+                                admin priviledge!.
+    
     <br><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<b>Question 2</b>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b> How do I delete my account?</b>
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Answer 2
+    &nbsp;&nbsp;&nbsp;&nbsp;    Click on the "Edit Account" button in the top right corner. To delete your account,
+                                scroll to the very bottom of the page. As a warning, this cannot be undone!
 </p><br>
 
 <% if current_user and current_user.email =="admin@gmail.com"%>
@@ -57,16 +59,54 @@
     <br>
 
     <h1>Administrator Functions</h1><br>
+    <p>
+        All Administrator functions are accesible exclusively by the admin account. Click
+        on the 'Admin' tab to access them.
+    </p><br>
 
     <h2>Creating a Mentor-to-Mentee Assignment</h2>
     <p>
-        This section will contain information on how to create a Mentor-to-Mentee connection.
+        There is a table with all current Mentor-to-Mentee mappings. To create a new one,
+        click 'Generate new mapping'. Select the Mentor, their Mentee, and type the first
+        year of the academic year where this relationship was active (e.g. "2022" for 
+        2022-2023). Upon creating this assignment, they will be shown on the table. This
+        should be repeated for one Mentor and all of their Mentees. To assign an additional
+        Mentor, simply create a single additional mapping for one of the Mentees which is
+        already assign to the first Mentor.
     </p><br>
 
-    <h2>Archiving a Year’s Mentor/Mentee Data</h2>
+    <h2>Creating Mentor/Mentee Group</h2>
     <p>
-        This section will contain information on how to push forward into a new academic year and
-        leave the old family tree in an archived state.
+        Before doing this, you should write down of the UID for each of the Mentors/Mentees
+        that will be going into this group. You can find this number at in the "User Managment"
+        table (ctrl+f is your friend). Now, at the bottom of the page, there is a section
+        titled "Group Mappings". To create a group to be shown on the Family Tree, click 'New
+        Group'. Now you will type in the academic year where this group was active (e.g. "2022"
+        for 2022-2023) and create a unique name for this group. Upon creating group, it should
+        appear as a dropdown with the name name year specified. Now add members to the group by
+        clicking '+' button on the right, 'New Member to Group', typing in the UID of a member,
+        and selecting the group to add them to. This process should be repeated for each member
+        of the group (unfortunately).
+    </p><br>
+
+    <h2>Creating a Director</h2>
+    <p>
+        At the Mentor-to-Mentee mappings, click 'Generate new mapping'. In both the 'Mentor' and
+        'Mentee' fields. Select the name of the user you would like to make a Director. Then type
+        in the first year in the current academic year (i.e. "2020" for the academic year:
+        2022-2023). This member will now show up as a Director for that acaddemic year's Family
+        Tree.
+    </p><br>
+
+    <h2>Transitioning to a new Academic Year</h2>
+    <p>
+        To transition to a new academic year (i.e. landing page will be current year), click
+        on the 'Admin Page'. At the very top is a submission box. To set the current year,
+        simply type in the first year in the current academic year (i.e. "2020" for the academic
+        year: 2022-2023). It is <strong>very important</strong> that you type in this year
+        correctly, otherwise the landing page will be blank! By clicking 'Submit', the change will
+        occur. As a side note, if there is no group or director data for that year, the page will
+        be blank.
     </p><br>
 
     <br>
