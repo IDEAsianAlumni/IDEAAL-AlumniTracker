@@ -27,6 +27,12 @@
         <%= f.label :Confirmation %><i>- retype NEW password</i>
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
+
+      <div class="field">
+          <label>UIN</label>
+          <% f.label :uid %>
+          <%= f.number_field :uid, :max => 999999999, :min =>100000000 %>
+        </div>
       
       <div class="field">
         <%= f.label :major %>
