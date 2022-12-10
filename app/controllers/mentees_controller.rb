@@ -25,7 +25,7 @@ class MenteesController < ApplicationController
 
     respond_to do |format|
       if @mentee.save
-        format.html { redirect_to mentee_url(@mentee), notice: "Mentee was successfully created." }
+        format.html { redirect_to '/admin', notice: "Mentee was successfully created." }
         format.json { render :show, status: :created, location: @mentee }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class MenteesController < ApplicationController
     @mentee.destroy
 
     respond_to do |format|
-      format.html { redirect_to mentees_url, notice: "Mentee was successfully destroyed." }
+      format.html { redirect_to '/admin', notice: "Mentee was successfully destroyed." }
       format.json { head :no_content }
     end
   end
