@@ -28,7 +28,7 @@ class MentorToMenteesController < ApplicationController
 
     respond_to do |format|
       if @mentor_to_mentee.save
-        format.html { redirect_to mentor_to_mentee_url(@mentor_to_mentee), notice: "Mentor to mentee was successfully created." }
+        format.html { redirect_to '/admin', notice: "Mentor to mentee was successfully created." }
         format.json { render :show, status: :created, location: @mentor_to_mentee }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class MentorToMenteesController < ApplicationController
     @mentor_to_mentee.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_path, notice: "Mentor to mentee was successfully destroyed." }
+      format.html { redirect_to '/admin', notice: "Mentor to mentee was successfully destroyed." }
       format.json { head :no_content }
     end
   end
