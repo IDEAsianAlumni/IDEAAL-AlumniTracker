@@ -1,176 +1,169 @@
-<head>
-    <%= stylesheet_link_tag 'general', media: 'all', 'data-turbolinks-track': 'reload' %>
-</head>
+<body>
 
-<br><br>
-
-<% if current_user and current_user.email =="admin@gmail.com"%>
-    <p>
-        For a printable version of this information, <a href="https://docs.google.com/document/d/1CzJV9ztIc_zw7ZT9LD728G7hlPIgx_0DNJflIMksRNY/edit#heading=h.nnv2nvbx9ybb" target="_blank">CLICK HERE<a>.
-    </p>
-<% end %>
-
-<hr><br>
-
-<h1>Getting Help</h1><br>
-
-<h2>Bug/Issue Reporting Ticket Submission</h2>
-
-<p>
-    If you are running into a bug in the application, please let us know by submitting a ticket using this <a href="https://forms.gle/rmZaLCaZTiy9NZ2t5">form</a>!
-</p><br>
-
-<h2>Frequently Asked Questions</h2>
-<p>
     <br><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<b> How can I be shown on the Family Tree?</b>
-    <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;    Reach out to a Director and they will be able to add you to the Family Tree page using,
-                                admin priviledge!
-    
-    <br><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<b> How do I delete my account?</b>
-    <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;    Click on the "Edit Account" button in the top right corner. To delete your account,
-                                scroll to the very bottom of the page. As a warning, this cannot be undone!
-</p><br>
 
-<% if current_user and current_user.email =="admin@gmail.com"%>
+    <% if current_user and current_user.email =="admin@gmail.com"%>
+        <p>
+            For a printable version of this information, <a href="https://docs.google.com/document/d/1CzJV9ztIc_zw7ZT9LD728G7hlPIgx_0DNJflIMksRNY/edit#heading=h.nnv2nvbx9ybb" target="_blank">CLICK HERE<a>.
+        </p>
+    <% end %>
 
-    <h2>Project Team Members</h2>
+    <hr><br>
+
+    <h1>Getting Help</h1><br>
+
+    <h2>Frequently Asked Questions</h2>
     <p>
-        Listed below are the member of the team which originally developed the application.
-        If there is any urgent issue that you (as an administrator) need help with right
-        away, please do not hesitate to contact the original product owner at his the email
-        cyrus.buhariwala@tamu.edu. Please be aware this since this is a project tied to a
-        semester, we are not obligated to make changes to the application after the Fall
-        2023 semester.
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<b> How can I be shown on the Family Tree?</b>
         <br>
-        <br><b>Cyrus Buhariwala:</b> Product Owner
-        <br><b>Sami Amin:</b> Data Designer & Scrum Master
-        <br><b>Nick Cheng:</b> Back End Developer
-        <br><b>Yonghwan Kim:</b> Front End Developer
+        &nbsp;&nbsp;&nbsp;&nbsp;    Reach out to a Director and they will be able to add you to the Family Tree page using,
+                                    admin priviledge!
+        
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<b> How do I delete my account?</b>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;    Click on the "Edit Account" button in the top right corner. To delete your account,
+                                    scroll to the very bottom of the page. As a warning, this cannot be undone!
     </p><br>
 
-    <hr><br>
+    <% if current_user and current_user.email =="admin@gmail.com"%>
 
-    <h1>Administrator Functions</h1><br>
-    <p>
-        All Administrator functions are accesible exclusively by the admin account. Click
-        on the 'Admin' tab to access them.
-    </p><br>
+        <h2>Project Team Members</h2>
+        <p>
+            Listed below are the member of the team which originally developed the application.
+            If there is any urgent issue that you (as an administrator) need help with right
+            away, please do not hesitate to contact the original product owner at his the email
+            cyrus.buhariwala@tamu.edu. Please be aware this since this is a project tied to a
+            semester, we are not obligated to make changes to the application after the Fall
+            2023 semester.
+            <br>
+            <br><b>Cyrus Buhariwala:</b> Product Owner
+            <br><b>Sami Amin:</b> Data Designer & Scrum Master
+            <br><b>Nick Cheng:</b> Back End Developer
+            <br><b>Yonghwan Kim:</b> Front End Developer
+        </p><br>
 
-    <h2>Creating a Mentor-to-Mentee Assignment</h2>
-    <p>
-        There is a table with all current Mentor-to-Mentee mappings. To create a new one,
-        click 'Generate new mapping'. Select the Mentor, their Mentee, and type the first
-        year of the academic year where this relationship was active (e.g. "2022" for 
-        2022-2023). Upon creating this assignment, they will be shown on the table. This
-        should be repeated for one Mentor and all of their Mentees. To assign an additional
-        Mentor, simply create a single additional mapping for one of the Mentees which is
-        already assign to the first Mentor.
-    </p><br>
+        <hr><br>
 
-    <h2>Creating Mentor/Mentee Group</h2>
-    <p>
-        Before doing this, you should write down of the UID for each of the Mentors/Mentees
-        that will be going into this group. You can find this number at in the "User Managment"
-        table (ctrl+f is your friend). Now, at the bottom of the page, there is a section
-        titled "Group Mappings". To create a group to be shown on the Family Tree, click 'New
-        Group'. Now you will type in the academic year where this group was active (e.g. "2022"
-        for 2022-2023) and create a unique name for this group. Upon creating group, it should
-        appear as a dropdown with the name name year specified. Now add members to the group by
-        clicking '+' button on the right, 'New Member to Group', typing in the UID of a member,
-        and selecting the group to add them to. This process should be repeated for each member
-        of the group (unfortunately).
-    </p><br>
+        <h1>Administrator Functions</h1><br>
+        <p>
+            All Administrator functions are accesible exclusively by the admin account. Click
+            on the 'Admin' tab to access them.
+        </p><br>
 
-    <h2>Creating a Director</h2>
-    <p>
-        At the Mentor-to-Mentee mappings, click 'Generate new mapping'. In both the 'Mentor' and
-        'Mentee' fields. Select the name of the user you would like to make a Director. Then type
-        in the first year in the current academic year (e.g. "2022" for the academic year:
-        2022-2023). This member will now show up as a Director for that acaddemic year's Family
-        Tree.
-    </p><br>
+        <h2>Creating a Mentor-to-Mentee Assignment</h2>
+        <p>
+            There is a table with all current Mentor-to-Mentee mappings. To create a new one,
+            click 'Generate new mapping'. Select the Mentor, their Mentee, and type the first
+            year of the academic year where this relationship was active (e.g. "2022" for 
+            2022-2023). Upon creating this assignment, they will be shown on the table. This
+            should be repeated for one Mentor and all of their Mentees. To assign an additional
+            Mentor, simply create a single additional mapping for one of the Mentees which is
+            already assign to the first Mentor.
+        </p><br>
 
-    <h2>Transitioning to a new Academic Year</h2>
-    <p>
-        To transition to a new academic year (i.e. landing page will be current year), click
-        on the 'Admin Page'. At the very top is a submission box. To set the current year,
-        simply type in the first year in the current academic year (e.g. "2022" for the academic
-        year: 2022-2023). It is <strong>very important</strong> that you type in this year
-        correctly, otherwise the landing page will be blank! By clicking 'Submit', the change will
-        occur. As a side note, if there is no group or director data for that year, the page will
-        be blank.
-    </p><br>
+        <h2>Creating Mentor/Mentee Group</h2>
+        <p>
+            Before doing this, you should write down of the UID for each of the Mentors/Mentees
+            that will be going into this group. You can find this number at in the "User Managment"
+            table (ctrl+f is your friend). Now, at the bottom of the page, there is a section
+            titled "Group Mappings". To create a group to be shown on the Family Tree, click 'New
+            Group'. Now you will type in the academic year where this group was active (e.g. "2022"
+            for 2022-2023) and create a unique name for this group. Upon creating group, it should
+            appear as a dropdown with the name name year specified. Now add members to the group by
+            clicking '+' button on the right, 'New Member to Group', typing in the UID of a member,
+            and selecting the group to add them to. This process should be repeated for each member
+            of the group (unfortunately).
+        </p><br>
 
-    <hr><br>
+        <h2>Creating a Director</h2>
+        <p>
+            At the Mentor-to-Mentee mappings, click 'Generate new mapping'. In both the 'Mentor' and
+            'Mentee' fields. Select the name of the user you would like to make a Director. Then type
+            in the first year in the current academic year (e.g. "2022" for the academic year:
+            2022-2023). This member will now show up as a Director for that acaddemic year's Family
+            Tree.
+        </p><br>
 
-    <h1>Heroku</h1><br>
+        <h2>Transitioning to a new Academic Year</h2>
+        <p>
+            To transition to a new academic year (i.e. landing page will be current year), click
+            on the 'Admin Page'. At the very top is a submission box. To set the current year,
+            simply type in the first year in the current academic year (e.g. "2022" for the academic
+            year: 2022-2023). It is <strong>very important</strong> that you type in this year
+            correctly, otherwise the landing page will be blank! By clicking 'Submit', the change will
+            occur. As a side note, if there is no group or director data for that year, the page will
+            be blank.
+        </p><br>
 
-    <h2>What is Heroku?</h2>
-    <p>
-        Heroku is a service used to host the IDEAAL Alumni Tracker application. It is the centralized
-        location that brings all components required to run the application together. This is the most
-        important service that keeps this application running for IDEAAL.
-    </p><br>
+        <hr><br>
 
-    <h2>Accessing Heroku</h2>
-    <p>
-        1. Visit <a href="https://id.heroku.com/login">https://id.heroku.com/login</a><br>
-        2. Sign in with credentials provided during the application transfer process<br>
-        3. Click on ‘ideasianamerican-alumni’<br>
-    </p><br>
+        <h1>Heroku</h1><br>
 
-    <h2>Getting the Link to the Application</h2>
-    <p>
-        1. Go to the app on Heroku<br>
-        2. There are 2 ways to get the link:<br>
-        &nbsp;&nbsp;&nbsp;&nbsp; a. In Heroku itself<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Go to the ‘Settings’ tab<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii. Scroll to the bottom until you can see the ‘Domains’ section<br>
-        &nbsp;&nbsp;&nbsp;&nbsp; b. Open the Application itself and get the URL<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Click on the ‘Open App’ button (can be accessed from anywhere in the app in Heroku<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii. You will be directed to the IDEAAL Alumni Tracker application on a new tab and then you can copy the URL
-    </p><br>
+        <h2>What is Heroku?</h2>
+        <p>
+            Heroku is a service used to host the IDEAAL Alumni Tracker application. It is the centralized
+            location that brings all components required to run the application together. This is the most
+            important service that keeps this application running for IDEAAL.
+        </p><br>
 
-    <h2>Application Specifics</h2>
-    <p>
-        Below are specifics on how the application is run and all the different topics we, as developers,
-        think you should be aware of in case you want to work on the application in the future. That being
-        said, everything has been set up by us before the transfer of ownership of this application and
-        additional work needs to be done. If there are additional questions in the future, you can reach
-        out to us for help.
-    </p><br>
+        <h2>Accessing Heroku</h2>
+        <p>
+            1. Visit <a href="https://id.heroku.com/login">https://id.heroku.com/login</a><br>
+            2. Sign in with credentials provided during the application transfer process<br>
+            3. Click on ‘ideasianamerican-alumni’<br>
+        </p><br>
 
-    <h3>Application Deployment</h3>
-    <p>
-        We have set up the application to automatically deploy whenever the ‘main’ branch of the repository
-        has been updated (through pull requests on GitHub). However, if there is ever a need to manually
-        re-deploy the application, then follow the steps below:<br><br>
+        <h2>Getting the Link to the Application</h2>
+        <p>
+            1. Go to the app on Heroku<br>
+            2. There are 2 ways to get the link:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; a. In Heroku itself<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Go to the ‘Settings’ tab<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii. Scroll to the bottom until you can see the ‘Domains’ section<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; b. Open the Application itself and get the URL<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Click on the ‘Open App’ button (can be accessed from anywhere in the app in Heroku<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii. You will be directed to the IDEAAL Alumni Tracker application on a new tab and then you can copy the URL
+        </p><br>
 
-        1. Click on the ‘Deploy’ tab<br>
-        2. Scroll to the bottom and click on ‘Deploy Branch’<br>
-        3. The application will start building and get ready for re-deployment<br>
-        &nbsp;&nbsp;&nbsp;&nbsp; a. The application will start building and get ready for re-deployment<br>
-        4. When the build is done and re-deployment is successful, you should see something like this:<br>
-        &nbsp;&nbsp;&nbsp;&nbsp; a. <i>image coming soon</i><br>
-        5. If the build failed, you could go to the ‘Activity’ tab and view the logs of the build and re-deployment to see what went wrong<br>
-        &nbsp;&nbsp;&nbsp;&nbsp; a. There are times when the building phase would succeed but the deployment phase would fail<br>
-    </p><br>
+        <h2>Application Specifics</h2>
+        <p>
+            Below are specifics on how the application is run and all the different topics we, as developers,
+            think you should be aware of in case you want to work on the application in the future. That being
+            said, everything has been set up by us before the transfer of ownership of this application and
+            additional work needs to be done. If there are additional questions in the future, you can reach
+            out to us for help.
+        </p><br>
 
-    <h3>Adding Access</h3>
-    <p>
-        If you have people you want to give access to in order to further develop this project, you can give their Heroku accounts access to the ‘ideasianamercican-alumni’. This will allow them to view and make changes to this app on their Heroku account.
+        <h3>Application Deployment</h3>
+        <p>
+            We have set up the application to automatically deploy whenever the ‘main’ branch of the repository
+            has been updated (through pull requests on GitHub). However, if there is ever a need to manually
+            re-deploy the application, then follow the steps below:<br><br>
 
-        1. Go to the ‘Access’ tab<br>
-        &nbsp;&nbsp;&nbsp;&nbsp; a. You should see a list of names who have access to this app on Heroku. It should look similar to this image:<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. image coming soon<br>
-        2. Click on ‘Add collaborator’<br>
-        3. Add the email address of the Heroku account you want to give access to and click the ‘Save Changes’ button.<br>
-        4. This will send an email to the person you want to give access to, telling them that they have been given access to the
-        application on Heroku. When they log into Heroku with their credentials, they should see the ‘ideasianamercican-alumni’ app.
-    </p><br>
+            1. Click on the ‘Deploy’ tab<br>
+            2. Scroll to the bottom and click on ‘Deploy Branch’<br>
+            3. The application will start building and get ready for re-deployment<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; a. The application will start building and get ready for re-deployment<br>
+            4. When the build is done and re-deployment is successful, you should see something like this:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; a. <i>image coming soon</i><br>
+            5. If the build failed, you could go to the ‘Activity’ tab and view the logs of the build and re-deployment to see what went wrong<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; a. There are times when the building phase would succeed but the deployment phase would fail<br>
+        </p><br>
 
-<% end %>
+        <h3>Adding Access</h3>
+        <p>
+            If you have people you want to give access to in order to further develop this project, you can give their Heroku accounts access to the ‘ideasianamercican-alumni’. This will allow them to view and make changes to this app on their Heroku account.
+
+            1. Go to the ‘Access’ tab<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; a. You should see a list of names who have access to this app on Heroku. It should look similar to this image:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. image coming soon<br>
+            2. Click on ‘Add collaborator’<br>
+            3. Add the email address of the Heroku account you want to give access to and click the ‘Save Changes’ button.<br>
+            4. This will send an email to the person you want to give access to, telling them that they have been given access to the
+            application on Heroku. When they log into Heroku with their credentials, they should see the ‘ideasianamercican-alumni’ app.
+        </p><br>
+
+    <% end %>
+</body>
